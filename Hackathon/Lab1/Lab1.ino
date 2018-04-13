@@ -1,3 +1,14 @@
+#include <Boards.h>
+#include <Firmata.h>
+#include <FirmataConstants.h>
+#include <FirmataDefines.h>
+#include <FirmataMarshaller.h>
+#include <FirmataParser.h>
+#include <Utils.h>
+
+#include <Sodaq_RN2483.h>
+#include <Sodaq_RN2483_internal.h>
+
 // Lab1.ino
 
 /*
@@ -23,8 +34,10 @@
 */
 
 #include <LoRa.h>
+#include <SoftwareSerial.h>
+
 #define debugSerial SerialUSB
-#define loraSerial  Serial2
+#define loraSerial  SoftwareSerial
 
 // Variables will contain your personal OTAA Activation Keys
 uint8_t devEUI[8] ;   // Device EUI
