@@ -46,8 +46,8 @@ void setup()
   // Init section
   // --------------------------------------------------------------------------
   // Temperature sensor
-  pinMode(TEMP_SENSOR, INPUT) ;
-  analogReadResolution(12) ;
+  //pinMode(TEMP_SENSOR, INPUT) ;
+  //analogReadResolution(12) ;
 
   // LoRa
   LoRa.hwInit() ;
