@@ -60,3 +60,10 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+var searchbar;
+
+$( document ).ready(function () {
+    searchbar = document.getElementsByClassName("top-search");
+    searchbar[0].style.display = "block";
+});
