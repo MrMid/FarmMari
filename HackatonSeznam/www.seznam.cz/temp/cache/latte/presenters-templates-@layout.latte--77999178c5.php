@@ -111,23 +111,7 @@ class Template77999178c5 extends Latte\Runtime\Template
                             <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
                         </div>
                     </div>
-                </div>
-
-                <div class="container">
-                    <!-- Atribute Navigation -->
-                    <div class="attr-nav">
-                        <ul>
-                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href=""><img class="logo" src="images/logo.png" alt=""></a>
-                    </div>
-                </div>   
+                </div>  
             </nav><!-- Navbar end -->
         </header><!-- Header end -->
 
@@ -210,14 +194,14 @@ class Template77999178c5 extends Latte\Runtime\Template
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	
-	<script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 146 */ ?>/js/jquery-1.12.1.min.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 147 */ ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 148 */ ?>/js/bootsnav.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 149 */ ?>/js/isotope.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 150 */ ?>/js/isotope-active.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 151 */ ?>/js/jquery.fancybox.js?v=2.1.5"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 152 */ ?>/js/jquery.scrollUp.min.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 153 */ ?>/js/main.js"></script>
+	<script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 130 */ ?>/js/jquery-1.12.1.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 131 */ ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 132 */ ?>/js/bootsnav.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 133 */ ?>/js/isotope.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 134 */ ?>/js/isotope-active.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 135 */ ?>/js/jquery.fancybox.js?v=2.1.5"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 136 */ ?>/js/jquery.scrollUp.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 137 */ ?>/js/main.js"></script>
     
 <?php
 	}
