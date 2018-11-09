@@ -12,4 +12,8 @@ Hlavni napady:
 	2. Instant answers - Stack overflow
 
 
+Ukoly:
+
+	H		L		Z		T
+	-news		-nette		-Stack		-GIT
 
