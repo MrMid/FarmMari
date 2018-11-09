@@ -60,6 +60,6 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Environment' => 1,
+    'Nette\\Environment' => 3,
   ),
 );
