@@ -1,40 +1,79 @@
-{**
- * @param string   $basePath web base path
- * @param array    $flashes  flash messages
- *}
+<?php
+// source: C:\wamp64\www\FarmMari\HackatonSeznam\www.seznam.cz\app\presenters/templates/@layout.latte
+
+use Latte\Runtime as LR;
+
+class Template77999178c5 extends Latte\Runtime\Template
+{
+	public $blocks = [
+		'head' => 'blockHead',
+		'scripts' => 'blockScripts',
+	];
+
+	public $blockTypes = [
+		'head' => 'html',
+		'scripts' => 'html',
+	];
+
+
+	function main()
+	{
+		extract($this->params);
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Fake News</title>
+	<title><?php
+		if (isset($this->blockQueue["title"])) {
+			$this->renderBlock('title', $this->params, function ($s, $type) {
+				$_fi = new LR\FilterInfo($type);
+				return LR\Filters::convertTo($_fi, 'html', $this->filters->filterContent('striphtml', $_fi, $s));
+			});
+			?> | <?php
+		}
+?>Fake News</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="stylesheet" href="{$basePath}/css/style.css"> -->
-	{block head}{/block}
+	<!-- <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 13 */ ?>/css/style.css"> -->
+	<?php
+		if ($this->getParentName()) return get_defined_vars();
+		$this->renderBlock('head', get_defined_vars());
+?>
 	
 	
 		<!-- Custom Fonts -->
-        <link rel="stylesheet" href="{$basePath}/custom-font/fonts.css" />
+        <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 18 */ ?>/custom-font/fonts.css">
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="{$basePath}/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 20 */ ?>/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="{$basePath}/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 22 */ ?>/css/font-awesome.min.css">
         <!-- Bootsnav -->
-        <link rel="stylesheet" href="{$basePath}/css/bootsnav.css">
+        <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 24 */ ?>/css/bootsnav.css">
         <!-- Fancybox -->
-        <link rel="stylesheet" type="text/css" href="{$basePath}/css/jquery.fancybox.css?v=2.1.5" media="screen" />	
+        <link rel="stylesheet" type="text/css" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 26 */ ?>/css/jquery.fancybox.css?v=2.1.5" media="screen">	
         <!-- Custom stylesheet -->
-        <link rel="stylesheet" href="{$basePath}/css/custom.css" />
+        <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 28 */ ?>/css/custom.css">
         <!--[if lt IE 9]>
                 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 </head>
 
 <body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+<?php
+		$iterations = 0;
+		foreach ($flashes as $flash) {
+			?>	<div<?php if ($_tmp = array_filter(['flash', $flash->type])) echo ' class="', LR\Filters::escapeHtmlAttr(implode(" ", array_unique($_tmp))), '"' ?>><?php
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 35 */ ?></div>
+<?php
+			$iterations++;
+		}
+?>
 
-	{include content}
+<?php
+		$this->renderBlock('content', $this->params, 'html');
+?>
 	
 	
 	
@@ -199,7 +238,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-lg-offset-1">
                         <div class="about_banner">
-                            <img src="images/man.png" alt="" />
+                            <img src="images/man.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -258,7 +297,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="service_item">
-                            <img src="images/service_img1.jpg" alt="Our Services" />
+                            <img src="images/service_img1.jpg" alt="Our Services">
                             <h3>CONSTRUCTION MANAGEMENT</h3>
                             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                             <a href="#services" class="btn know_btn">know more</a>
@@ -266,7 +305,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="service_item">
-                            <img src="images/service_img2.jpg" alt="Our Services" />
+                            <img src="images/service_img2.jpg" alt="Our Services">
                             <h3>RENOVATION</h3>
                             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                             <a href="#services" class="btn know_btn">know more</a>
@@ -274,7 +313,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="service_item">
-                            <img src="images/service_img3.jpg" alt="Our Services" />
+                            <img src="images/service_img3.jpg" alt="Our Services">
                             <h3>ARCHITECTURE</h3>
                             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                             <a href="#services" class="btn know_btn">know more</a>
@@ -301,7 +340,7 @@
                 <div class="grid">
                     <div class="grid-sizer"></div>
                     <div class="grid-item grid-item--width2 grid-item--height2 buildings plumbing interior">
-                        <img alt="" src="images/highligh_img.jpg" >
+                        <img alt="" src="images/highligh_img.jpg">
                         <div class="portfolio_hover_area">
                             <a class="fancybox" href="images/highligh_img.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
@@ -309,7 +348,7 @@
                     </div>
 
                     <div class="grid-item buildings interior isolation">
-                        <img alt="" src="images/portfolio1.jpg" >
+                        <img alt="" src="images/portfolio1.jpg">
                         <div class="portfolio_hover_area">
                             <a class="fancybox" href="images/portfolio1.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
@@ -317,7 +356,7 @@
                     </div>
 
                     <div class="grid-item interior plumbing isolation">
-                        <img alt="" src="images/portfolio2.jpg" >
+                        <img alt="" src="images/portfolio2.jpg">
                         <div class="portfolio_hover_area">
                             <a class="fancybox" href="images/portfolio2.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
@@ -325,7 +364,7 @@
                     </div>
 
                     <div class="grid-item isolation buildings">
-                        <img alt="" src="images/portfolio3.jpg" >
+                        <img alt="" src="images/portfolio3.jpg">
                         <div class="portfolio_hover_area">
                             <a class="fancybox" href="images/portfolio3.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
@@ -333,7 +372,7 @@
                     </div>
 
                     <div class="grid-item plumbing isolation">
-                        <img alt="" src="images/portfolio4.jpg" >
+                        <img alt="" src="images/portfolio4.jpg">
                         <div class="portfolio_hover_area">
                             <a class="fancybox" href="images/portfolio4.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
@@ -355,7 +394,7 @@
                             <div class="testimonial_content text-left">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                             </div>
-                            <img src="images/testimonial_img1.png" alt="Testimonial" />
+                            <img src="images/testimonial_img1.png" alt="Testimonial">
                             <p class="worker_name">john smith</p>
                         </div>
                     </div>
@@ -364,7 +403,7 @@
                             <div class="testimonial_content">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                             </div>
-                            <img src="images/testimonial_img2.png" alt="Testimonial" />
+                            <img src="images/testimonial_img2.png" alt="Testimonial">
                             <p class="worker_name">john smith</p>
                         </div>
                     </div>
@@ -373,7 +412,7 @@
                             <div class="testimonial_content">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                             </div>
-                            <img src="images/testimonial_img1.png" alt="Testimonial" />
+                            <img src="images/testimonial_img1.png" alt="Testimonial">
                             <p class="worker_name">john smith</p>
                         </div>
                     </div>
@@ -413,7 +452,7 @@
                     <div class="col-lg-4 col-sm-7">
                         <div class="footer_item">
                             <h4>About Company</h4>
-                            <img class="logo" src="images/logo.png" alt="Construction" />
+                            <img class="logo" src="images/logo.png" alt="Construction">
                             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem</p>
 
                             <ul class="list-inline footer_social_icon">
@@ -457,7 +496,7 @@
                             <ul class="list-unstyled footer_contact">
                                 <li><a href=""><span class="fa fa-map-marker"></span> 124 New Line, London UK</a></li>
                                 <li><a href=""><span class="fa fa-envelope"></span> hello@psdfreebies.com</a></li>
-                                <li><a href=""><span class="fa fa-mobile"></span><p>+44 00 00 1234 <br />+44 00 00 1234</p></a></li>
+                                <li><a href=""><span class="fa fa-mobile"></span><p>+44 00 00 1234 <br>+44 00 00 1234</p></a></li>
                             </ul>
                         </div>
                     </div>
@@ -479,19 +518,48 @@
 	
 	
 
-	{block scripts}
+<?php
+		$this->renderBlock('scripts', get_defined_vars());
+?>
+</body>
+</html>
+<?php
+		return get_defined_vars();
+	}
+
+
+	function prepare()
+	{
+		extract($this->params);
+		if (isset($this->params['flash'])) trigger_error('Variable $flash overwritten in foreach on line 35');
+		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
+		
+	}
+
+
+	function blockHead($_args)
+	{
+		
+	}
+
+
+	function blockScripts($_args)
+	{
+		extract($_args);
+?>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	
-	<script src="{$basePath}/js/jquery-1.12.1.min.js"></script>
-    <script src="{$basePath}/js/bootstrap.min.js"></script>
-    <script src="{$basePath}/js/bootsnav.js"></script>
-    <script src="{$basePath}/js/isotope.js"></script>
-    <script src="{$basePath}/js/isotope-active.js"></script>
-    <script src="{$basePath}/js/jquery.fancybox.js?v=2.1.5"></script>
-    <script src="{$basePath}/js/jquery.scrollUp.min.js"></script>
-    <script src="{$basePath}/js/main.js"></script>
+	<script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 486 */ ?>/js/jquery-1.12.1.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 487 */ ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 488 */ ?>/js/bootsnav.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 489 */ ?>/js/isotope.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 490 */ ?>/js/isotope-active.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 491 */ ?>/js/jquery.fancybox.js?v=2.1.5"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 492 */ ?>/js/jquery.scrollUp.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 493 */ ?>/js/main.js"></script>
     
-	{/block}
-</body>
-</html>
+<?php
+	}
+
+}
