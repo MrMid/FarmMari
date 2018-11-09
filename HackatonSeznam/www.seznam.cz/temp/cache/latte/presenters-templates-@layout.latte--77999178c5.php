@@ -70,12 +70,6 @@ class Template77999178c5 extends Latte\Runtime\Template
 			$iterations++;
 		}
 ?>
-
-<?php
-		$this->renderBlock('content', $this->params, 'html');
-?>
-	
-	
 	
 	<!-- Preloader -->
 
@@ -114,38 +108,9 @@ class Template77999178c5 extends Latte\Runtime\Template
             </nav><!-- Navbar end -->
         </header><!-- Header end -->
 
-        <!-- Services -->
-        <section id="services">
-            <div class="container">
-                <h2>OUR SERVICES</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="service_item">
-                            <img src="images/service_img1.jpg" alt="Our Services">
-                            <h3>CONSTRUCTION MANAGEMENT</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                            <a href="#services" class="btn know_btn">know more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service_item">
-                            <img src="images/service_img2.jpg" alt="Our Services">
-                            <h3>RENOVATION</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                            <a href="#services" class="btn know_btn">know more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service_item">
-                            <img src="images/service_img3.jpg" alt="Our Services">
-                            <h3>ARCHITECTURE</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                            <a href="#services" class="btn know_btn">know more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- Services end -->
+<?php
+		$this->renderBlock('content', $this->params, 'html');
+?>
 
         
         <!-- Footer -->
@@ -193,14 +158,14 @@ class Template77999178c5 extends Latte\Runtime\Template
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
 	
-	<script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 129 */ ?>/js/jquery-1.12.1.min.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 130 */ ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 131 */ ?>/js/bootsnav.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 132 */ ?>/js/isotope.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 133 */ ?>/js/isotope-active.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 134 */ ?>/js/jquery.fancybox.js?v=2.1.5"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 135 */ ?>/js/jquery.scrollUp.min.js"></script>
-    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 136 */ ?>/js/main.js"></script>
+	<script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 94 */ ?>/js/jquery-1.12.1.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 95 */ ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 96 */ ?>/js/bootsnav.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 97 */ ?>/js/isotope.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 98 */ ?>/js/isotope-active.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 99 */ ?>/js/jquery.fancybox.js?v=2.1.5"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 100 */ ?>/js/jquery.scrollUp.min.js"></script>
+    <script src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 101 */ ?>/js/main.js"></script>
     
 <?php
 	}

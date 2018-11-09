@@ -787,7 +787,7 @@ nav.navbar.bootsnav ul.nav > li > a{
     /* Tabs
     =================================*/ 
     nav.navbar.bootsnav .megamenu-content.tabbed{
-        padding-left: 0 !important;
+        padding-left: 0 !mportant;
     }
     
     nav.navbar.bootsnav .tabbed > li{
