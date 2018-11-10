@@ -21,11 +21,19 @@
                 <h2>OUR SERVICES</h2>
                 {control search}
                 
+                
                 </div>
             </div>
-            <div class="container">
-       
-            </div>
+            {control seznam}
+                {if ($json !== null)}
+                 {foreach $json->data->organic as $item} 
+                     <div class="container">
+                        <h2> {$item->snippet->title}</h2> 
+                      </div>
+                 {/foreach}
+                 {/if}
+                 frt
+           
         </section>
         
         

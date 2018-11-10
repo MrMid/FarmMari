@@ -7,16 +7,21 @@ use Nette\Application\UI;
 
 final class HomepagePresenter extends BasePresenter
 {
-	
+	/** @var \Nette\Http\SessionSection */
+	private $session;
+
+	/** @var Nette\Http\SessionSection */
+    private $sessionSection;
+
 	public function renderDefault()
 	{
-		$this->template->anyVariable = 'any value';
+		$this->template->json = null;
 	}
 	
 	public function createComponentSearch()
 	{
 		$form = New UI\Form();
-		$form->addText('query', 'Query:');
+		$form->addText('query', 'Query:')->setRequired(true);
 		$form->addSubmit('search', 'Find');
 		$form->onSuccess[] = [$this, 'searchSucceeded'];
 		return $form;
@@ -29,9 +34,12 @@ final class HomepagePresenter extends BasePresenter
 		$q = array_map('strtolower', explode(' ', $values->query));
 		$intersect = array_intersect($q, $keyWordsList);
 		if (sizeof($intersect) !== 0) {
-			$this->flashmessage($this->queryStackOverflow($values->query, $intersect)??'');
+			$this->flashMessage($this->queryStackOverflow($values->query, $intersect)??'');
 		}
 		else $this->flashMessage("Not a programming question.");
+		$seznam = $this->seznamSearch($values->query);
+		$this->template->json = $seznam;
+		$this->redrawControl('seznam');
 	}
 
 	private function queryStackOverflow($query, $matchedTags)
@@ -48,7 +56,7 @@ final class HomepagePresenter extends BasePresenter
 
 	private function queryQuestions($query, $tags)
 	{
-		$q = file_get_contents('https://api.stackexchange.com/2.2/search?tagged=' . urlencode(join(";",$tags)) . '&intitle=' . urlencode($query) . '&site=stackoverflow&sort=votes&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
+		$q = file_get_contents('https://api.stackexchange.com/2.2/search?tagged=' . urlencode(join(';', $tags)) . '&intitle=' . urlencode($query) . '&site=stackoverflow&sort=votes&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
 		$q = json_decode(gzinflate(substr($q, 10)));
 		return $q;
 	}
@@ -69,9 +77,12 @@ final class HomepagePresenter extends BasePresenter
 	public function createComponentSeznam()
 	{
 		$request = New UI\Form();
-		$url = 'https://cqc.seznam.net/hackathon/graphql';
-		$url1 = 'http://midaga.eu:9999';
+		return $request;
+	}
 
+	private function seznamSearch($imput)
+	{
+		$url = 'https://cqc.seznam.net/hackathon/graphql';
 		//headry
 		$header = array();
 		$header[] = 'Content-length: 0';
@@ -80,15 +91,15 @@ final class HomepagePresenter extends BasePresenter
 		
 		// zmente podle potreby 
 		$query = '{"query": "{ live_queries }"}';
-		$query1 = '{"query":"{organic(query:\"zeman\"){docId snippet{url description title urlHighlighted}}}"}';
+		$query1 = '{"query":"{organic(query:\"'.$imput.'\"){docId snippet{url description title urlHighlighted}}}"}';
 		$query2 = '{"query":"{organic(query:\"php error\"){snippet{title url description urlHighlighted}attributes{lastChangeDate}}}"}';
-		  echo "<pre>";
-		  echo $query2;
-		  echo "</pre>";
+		//   echo "<pre>";
+		//   echo $query2;
+		//   echo "</pre>";
 
 		// pripoji se k seznamu a vrati JSON dat
 		$data = array("username" => "test");                                                                    
-		$data_string =$query2;                                                                                   
+		$data_string =$query1;                                                                                   
 		$api_key = "hackathon";   
 		$password = "AhJ4xie6lie0Opau";                                                                                                                 
 		$ch = curl_init(); 
@@ -114,20 +125,10 @@ final class HomepagePresenter extends BasePresenter
 		$result = curl_exec($ch);
 		$returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		curl_close($ch);  
-		echo $returnCode;
-		var_dump($errors);
+		// echo $returnCode;
+		// var_dump($errors);
 		// print_r($result);
 		$json = json_decode($result);
-		print_r($json->data->organic[0]->snippet->title);
-
-		return $request;
-	}
-
-	protected function createComponentArticle()
-	{
-		$control = new \ArticleControl;
-		return $control;
+		return $json;
 	}
 }
-
-
