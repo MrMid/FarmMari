@@ -1,0 +1,108 @@
+
+#stack-bubble-block {
+    position: absolute; 
+    top: 1rem;
+    left: -6.6rem;
+    width: 4rem; 
+    height: 7rem; 
+    border:0px; 
+    padding: 0px; 
+    margin: 0px;
+    background-repeat: no-repeat; 
+    background-position: 50%; 
+    background-size: contain; 
+    background-image: url(https://search.seznam.cz/re/media/dogs/default.e622ed38db.png);
+}
+
+#pes-bubble {
+    border: solid gray 1px;
+    border-radius: 4px; 
+    float: left;
+    padding: 25px;
+}
+
+#pes-bubble::before {
+    background-color:rgb(255, 255, 255); 
+    border-bottom-color:rgba(0, 0, 0, 0.08);
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-left-color:rgba(0, 0, 0, 0.08);
+    border-left-style:solid;
+    border-left-width:1px;
+    border-right-color:rgba(0, 0, 0, 0);
+    border-right-style:solid;
+    border-right-width:1px;
+    border-top-color:rgba(0, 0, 0, 0);
+    border-top-style:solid;
+    border-top-width:1px;
+    box-sizing:border-box;
+    content:" ";display:block;
+    height:14px;
+    left:-8px;
+    position:absolute;
+    top:30px;
+    transform:matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0);
+    width:14px;
+}
+
+#pes-bubble.post-text {
+    width: 100%;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.3;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    display: block;
+}
+
+#pes-bubble p {
+    clear: both;
+    margin-bottom: 1em;
+    margin-top: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#pes-bubble.prettyprint {
+    display: block;
+    color: #393318;
+}
+
+#pes-bubble pre {
+    margin-bottom: 1em;
+    padding: 5px;
+    width: auto;
+    max-height: 600px;
+    overflow: auto;
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+    font-size: 13px;
+    background-color: #eff0f1;
+}
+
+#pes-bubble.kwd {
+
+}
+#pes-bubble. {
+    
+}
+#pes-bubble. {
+    
+}
+#pes-bubble. {
+    
+}
+#pes-bubble. {
+    
+}
+#pes-bubble. {
+    
+}
