@@ -28,20 +28,27 @@ final class HomepagePresenter extends BasePresenter
 		$q = array_map('strtolower', explode(' ', $values->query));
 		$intersect = array_intersect($q, $keyWordsList);
 		if (sizeof($intersect) !== 0) {
-			$this->flashMessage($this->queryStackOverflow($values->query, $intersect)??'');
+			$answerID = $this->queryStackOverflow($values->query, $intersect);
+			$question = $this->queryQuestions($values->query, $intersect);
+			
+			$answerUrl = 'https://stackoverflow.com/a/' . $answerID;
+			$soAnswer = file_get_contents($question->items[0]->link);
+			$divStart = explode('answer-'.$answerID, $soAnswer)[1];
+			$divStart = explode('--right">', $divStart)[1];
+			$stri = explode('<div class="grid', $divStart)[0];
+			$this->template->SOAnswer = $stri;
 		}
 		else $this->flashMessage("Not a programming question.");
+
 		$seznam = $this->seznamSearch($values->query);
 		$this->template->json = $seznam;
-		// $this->redrawControl('seznam');
 	}
 
 	private function queryStackOverflow($query, $matchedTags)
 	{
 		$question = $this->queryQuestions($query, $matchedTags);
 		$answerID = $this->getAnswer($question->items[0]->question_id)->answer_id;
-		$answerUrl = 'https://stackoverflow.com/a/' . $answerID;
-		return $answerUrl;
+		return $answerID;
 	}
 
 	private function queryQuestions($query, $tags)
