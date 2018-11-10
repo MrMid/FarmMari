@@ -26,6 +26,7 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 	function prepare()
 	{
 		extract($this->params);
+		if (isset($this->params['flash'])) trigger_error('Variable $flash overwritten in foreach on line 22');
 		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
 		
 	}
@@ -64,7 +65,15 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
                 </div>  
             </nav><!-- Navbar end -->
         </header>
-        
+<?php
+		$iterations = 0;
+		foreach ($flashes as $flash) {
+			?>     	<div<?php if ($_tmp = array_filter(['flash', $flash->type])) echo ' class="', LR\Filters::escapeHtmlAttr(implode(" ", array_unique($_tmp))), '"' ?>><?php
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 22 */ ?></div>   
+<?php
+			$iterations++;
+		}
+?>
         
 
                   

@@ -1262,13 +1262,13 @@ footer::after {
 .lit {
     color: #7D2727;
 }
-
-	
-	
 	
 .tlacitkoSearch{
 	float:right;
 	height: 40px;
+	background-color: gray;
+	color: white;
+	border-color: black;
 }
 	
 
