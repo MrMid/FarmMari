@@ -18,6 +18,7 @@ final class HomepagePresenter extends BasePresenter
 		$form = New UI\Form();
 		$form->addText('query', 'Query:');
 		$form->addSubmit('search', 'Find');
+<<<<<<< HEAD
 		$form->onSuccess[] = [$this, 'searchSucceeded'];
 		return $form;
 	}
@@ -25,6 +26,15 @@ final class HomepagePresenter extends BasePresenter
 	public function searchSucceeded(UI\Form $form, $values)
 	{
 		$this->flashmessage($this->queryStackOverflow($values->query, ''));
+=======
+		$form->onSuccess[] = [$this, 'searchSuccessful'];
+		return $form;
+	}
+
+	public function searchSucceeded(Form $form, stdClass $values)
+	{
+		$this->flashmessage($values->query);
+>>>>>>> fc59f923a26a31cb6be8c8dbce87f701149062fc
 	}
 
 	private function queryStackOverflow($query, $matchedTag)
