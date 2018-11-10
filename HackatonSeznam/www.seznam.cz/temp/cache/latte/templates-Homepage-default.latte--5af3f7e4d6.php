@@ -17,6 +17,9 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 	function main()
 	{
 		extract($this->params);
+?>
+
+<?php
 		if ($this->getParentName()) return get_defined_vars();
 		$this->renderBlock('content', get_defined_vars());
 		return get_defined_vars();
@@ -33,7 +36,22 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 
 	function blockContent($_args)
 	{
-?><!-- Services -->
+?><!-- Header -->
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar bootsnav">
+                <!-- Top Search -->
+                <div class="top-search">
+                    <div class="container">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                </div>  
+            </nav><!-- Navbar end -->
+        </header><!-- Header end -->
+        
         <section id="services">
             <div class="container">
                 <h2>OUR SERVICES</h2>
@@ -64,7 +82,18 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
                     </div>
                 </div>
             </div>
-        </section><!-- Services end -->
+        </section>
+        
+        
+                <!-- Footer -->
+        <footer>
+            <!-- Footer bottom -->
+            <div class="footer_bottom text-center">
+                <p class="wow fadeInRight">
+                    Tým Farmáři.
+                </p>
+            </div><!-- Footer bottom end -->
+        </footer><!-- Footer end -->
 <?php
 	}
 
