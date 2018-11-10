@@ -63,6 +63,7 @@ final class HomepagePresenter extends BasePresenter
 	{
 		$request = New UI\Form();
 		$url = 'https://cqc.seznam.net/hackathon/graphql';
+		$url1 = 'http://midaga.eu:9999';
 
 		//headry
 		$header = array();
@@ -72,10 +73,14 @@ final class HomepagePresenter extends BasePresenter
 		
 		// zmente podle potreby 
 		$query = '{"query": "{ live_queries }"}';
+		$query1 = '{"query":"{organic(query:\"zeman\"){docId snippet{url description title urlHighlighted}}}"}';
+		  echo "<pre>";
+		  echo $query1;
+		  echo "</pre>";
 
 		// pripoji se k seznamu a vrati JSON dat
 		$data = array("username" => "test");                                                                    
-		$data_string =$query;                                                                                   
+		$data_string =$query1;                                                                                   
 		$api_key = "hackathon";   
 		$password = "AhJ4xie6lie0Opau";                                                                                                                 
 		$ch = curl_init(); 
@@ -103,7 +108,7 @@ final class HomepagePresenter extends BasePresenter
 		curl_close($ch);  
 		echo $returnCode;
 		var_dump($errors);
-		print_r(json_decode($result, true));
+		print_r($result);
 
 		return $request;
 	}
