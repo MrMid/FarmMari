@@ -33,12 +33,14 @@ final class HomepagePresenter extends BasePresenter
 		$keyWordsList = array_map('strtolower', $langs);
 		$q = array_map('strtolower', explode(' ', $values->query));
 		$intersect = array_intersect($q, $keyWordsList);
-		if (sizeof($intersect) !== 0) {
-			$this->flashMessage($this->queryStackOverflow($values->query, $intersect)??'');
+		if (sizeof($intersect) !== 0 && $this->queryStackOverflow($values->query, $intersect) !== NULL ) {
+			$this->flashMessage($this->queryStackOverflow($values->query, $intersect));
 		}
 		else $this->flashMessage("Not a programming question.");
 		$seznam = $this->seznamSearch($values->query);
 		$this->template->json = $seznam;
+		// var_dump($seznam);
+		// exit;
 		$this->redrawControl('seznam');
 	}
 
@@ -74,11 +76,11 @@ final class HomepagePresenter extends BasePresenter
 	}
 
 	// takhle komponenta bdue vyhledavat data na zaklade vyhledavane souslovi z platformy od Seznamu
-	public function createComponentSeznam()
-	{
-		$request = New UI\Form();
-		return $request;
-	}
+	// public function createComponentSeznam()
+	// {
+	// 	$request = New UI\Form();
+	// 	return $request;
+	// }
 
 	private function seznamSearch($imput)
 	{
@@ -129,6 +131,8 @@ final class HomepagePresenter extends BasePresenter
 		// var_dump($errors);
 		// print_r($result);
 		$json = json_decode($result);
+		// var_dump($json);
+		// exit;
 		return $json;
 	}
 }
