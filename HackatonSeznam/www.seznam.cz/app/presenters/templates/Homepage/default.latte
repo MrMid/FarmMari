@@ -8,8 +8,7 @@
                 <div class="top-search">
                     <div class="container">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search" />
+                            
                              <span class="input-group-addon"><i class="fa fa-search"></i></span> 
                             {form search, role=>"form"}
                                 {input query, class=>"form-control", placeholder=>"Search"}
@@ -20,32 +19,7 @@
                     </div>
                 </div>  
             </nav><!-- Navbar end -->
-        </header><!-- Header end -->
-        
-        <section id="services">
-            <div class="container">
-                <h2>OUR SERVICES</h2>
-                {control search}
-                
-                
-                </div>
-            </div>
-            
-                {if ($json !== null)}
-
-                 {foreach $json->data->organic as $item} 
-                     <div class="container">
-                        <h2> {$item->snippet->title}</h2> 
-                      </div>
-                 {/foreach}
-                 {/if}
-                 frt
-            
-           
-        </section>
-        
-        
-        
+        </header><!-- Header end -->        
 
                   
           <div class="container">
@@ -71,44 +45,17 @@
 	</div>
           
           
-           <div class="zaznam">
-		        <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-				<a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>	
-		        <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-		    </div>
+           {if (isset($json) &&$json !== null)}
 
-           <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                       <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                       <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                       <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-
-           <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                        		    
-		    <div class="zaznam">
-		        <a href="#"><p class="title">Zeman odkládá cesty. Prezident oproti plánům nepojede do …</p></a>
-				<a href="#"><p class="url">https://www.kupi.cz/letaky/zeman-maso-uzeniny</p></a>	
-		        <p class="description">Ve Varšavě si včera dala schůzku neformální skupina devíti hlav států zemí střední a východní Evropy. Do polské metropole se jich ovšem sjelo jen osm – jako jediný chyběl český prezident Miloš Zeman, který za sebe poslal náhradu v podobě …</p>
-		    </div>
+                 {foreach $json->data->organic as $item} 
+                      <div class="zaznam">
+                                  
+                            <a href="{$item->snippet->url}"><p class="title">{preg_replace('/<\/?[^>]+>/', '', $item->snippet->title)}</p></a>
+                        <a href="{$item->snippet->url}"><p class="url">{preg_replace('/<\/?[^>]+>/', '', $item->snippet->url)}</p></a>	
+                        <p class="description">{preg_replace('/<\/?[^>]+>/', '', $item->snippet->description)}</p>
+		             </div>
+                 {/foreach}
+            {/if}
         </div>                                          
 
         

@@ -26,7 +26,7 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 	function prepare()
 	{
 		extract($this->params);
-		if (isset($this->params['item'])) trigger_error('Variable $item overwritten in foreach on line 36');
+		if (isset($this->params['item'])) trigger_error('Variable $item overwritten in foreach on line 50');
 		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
 		
 	}
@@ -45,17 +45,16 @@ class Template247b1c1ceb extends Latte\Runtime\Template
                 <div class="top-search">
                     <div class="container">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
+                            
                              <span class="input-group-addon"><i class="fa fa-search"></i></span> 
                             <?php
-		/* line 14 */
+		/* line 13 */
 		echo Nette\Bridges\FormsLatte\Runtime::renderFormBegin($form = $_form = $this->global->formsStack[] = $this->global->uiControl["search"], ['role'=>"form"]);
 ?>
 
-                                <?php echo end($this->global->formsStack)["query"]->getControl()->addAttributes(['class'=>"form-control", 'placeholder'=>"Search"]) /* line 15 */ ?>
+                                <?php echo end($this->global->formsStack)["query"]->getControl()->addAttributes(['class'=>"form-control", 'placeholder'=>"Search"]) /* line 14 */ ?>
 
-            					<?php echo end($this->global->formsStack)["search"]->getControl()->addAttributes(['class'=>'tlacitkoSearch']) /* line 16 */ ?>
+            					<?php echo end($this->global->formsStack)["search"]->getControl()->addAttributes(['class'=>'tlacitkoSearch']) /* line 15 */ ?>
 
 
                             <?php
@@ -66,44 +65,7 @@ class Template247b1c1ceb extends Latte\Runtime\Template
                     </div>
                 </div>  
             </nav><!-- Navbar end -->
-        </header><!-- Header end -->
-        
-        <section id="services">
-            <div class="container">
-                <h2>OUR SERVICES</h2>
-<?php
-		/* line 28 */ $_tmp = $this->global->uiControl->getComponent("search");
-		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
-		$_tmp->render();
-?>
-                
-                
-                </div>
-            </div>
-            
-<?php
-		if (($json !== null)) {
-?>
-
-<?php
-			$iterations = 0;
-			foreach ($json->data->organic as $item) {
-?>
-                     <div class="container">
-                        <h2> <?php echo LR\Filters::escapeHtmlText($item->snippet->title) /* line 38 */ ?></h2> 
-                      </div>
-<?php
-				$iterations++;
-			}
-		}
-?>
-                 frt
-            
-           
-        </section>
-        
-        
-        
+        </header><!-- Header end -->        
 
                   
           <div class="container">
@@ -129,44 +91,27 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 	</div>
           
           
-           <div class="zaznam">
-		        <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-				<a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>	
-		        <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-		    </div>
+<?php
+		if ((isset($json) &&$json !== null)) {
+?>
 
-           <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                       <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                       <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                       <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-
-           <div class="zaznam">
-                <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
-                <a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>  
-                <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
-            </div>
-                        		    
-		    <div class="zaznam">
-		        <a href="#"><p class="title">Zeman odkládá cesty. Prezident oproti plánům nepojede do …</p></a>
-				<a href="#"><p class="url">https://www.kupi.cz/letaky/zeman-maso-uzeniny</p></a>	
-		        <p class="description">Ve Varšavě si včera dala schůzku neformální skupina devíti hlav států zemí střední a východní Evropy. Do polské metropole se jich ovšem sjelo jen osm – jako jediný chyběl český prezident Miloš Zeman, který za sebe poslal náhradu v podobě …</p>
-		    </div>
+<?php
+			$iterations = 0;
+			foreach ($json->data->organic as $item) {
+?>
+                      <div class="zaznam">
+                                  
+                            <a href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($item->snippet->url)) /* line 53 */ ?>"><p class="title"><?php
+				echo LR\Filters::escapeHtmlText(preg_replace('/<\/?[^>]+>/', '', $item->snippet->title)) /* line 53 */ ?></p></a>
+                        <a href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($item->snippet->url)) /* line 54 */ ?>"><p class="url"><?php
+				echo LR\Filters::escapeHtmlText(preg_replace('/<\/?[^>]+>/', '', $item->snippet->url)) /* line 54 */ ?></p></a>	
+                        <p class="description"><?php echo LR\Filters::escapeHtmlText(preg_replace('/<\/?[^>]+>/', '', $item->snippet->description)) /* line 55 */ ?></p>
+		             </div>
+<?php
+				$iterations++;
+			}
+		}
+?>
         </div>                                          
 
         

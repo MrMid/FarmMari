@@ -9,12 +9,13 @@ final class HomepagePresenter extends BasePresenter
 {
 	public function renderDefault()
 	{
+		// $this->template->json = null;
 	}
 	
 	public function createComponentSearch()
 	{
 		$form = New UI\Form();
-		$form->addText('query', 'Query:')->setRequired(true);
+		$form->addText('query', 'Query:');
 		$form->addSubmit('search', 'Find');
 		$form->onSuccess[] = [$this, 'searchSucceeded'];
 		return $form;
