@@ -975,6 +975,7 @@ footer::after {
 
 
 }
+<<<<<<< HEAD
 
 <!-- SO -->
 #stack-bubble-block {
@@ -1084,3 +1085,11 @@ footer::after {
 .lit {
     color: #7D2727;
 }
+
+	
+	
+	
+
+
+=======
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477
