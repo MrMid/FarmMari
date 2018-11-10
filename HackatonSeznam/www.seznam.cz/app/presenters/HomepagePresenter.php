@@ -18,7 +18,6 @@ final class HomepagePresenter extends BasePresenter
 		$form = New UI\Form();
 		$form->addText('query', 'Query:');
 		$form->addSubmit('search', 'Find');
-<<<<<<< HEAD
 		$form->onSuccess[] = [$this, 'searchSucceeded'];
 		return $form;
 	}
@@ -26,15 +25,6 @@ final class HomepagePresenter extends BasePresenter
 	public function searchSucceeded(UI\Form $form, $values)
 	{
 		$this->flashmessage($this->queryStackOverflow($values->query, ''));
-=======
-		$form->onSuccess[] = [$this, 'searchSuccessful'];
-		return $form;
-	}
-
-	public function searchSucceeded(Form $form, stdClass $values)
-	{
-		$this->flashmessage($values->query);
->>>>>>> fc59f923a26a31cb6be8c8dbce87f701149062fc
 	}
 
 	private function queryStackOverflow($query, $matchedTag)
@@ -66,5 +56,71 @@ final class HomepagePresenter extends BasePresenter
 			$answer = $answers->items[0];
 		}
 		return $answer;
+	}
+
+	// takhle komponenta bdue vyhledavat data na zaklade vyhledavane souslovi z platformy od Seznamu
+	public function createComponentSeznam()
+	{
+		$request = New UI\Form();
+		$url = 'https://cqc.seznam.net/hackathon/graphql';
+
+		//headry
+		$header = array();
+		$header[] = 'Content-length: 0';
+		$header[] = 'Content-type: application/json';
+		$header[] = 'Authorization: OAuth aGFja2F0aG9uOkFoSjR4aWU2bGllME9wYXU';
+		
+		// zmente podle potreby 
+		$query = '{"query": "{ live_queries }"}';
+
+		//nastaveni pro https
+		// $options = array(
+		// 	'https' => array(
+		// 		'header'  => $header,
+		// 		'method'  => 'POST',
+		// 		'content' => $query
+		// 	)
+		// );
+
+		// $context  = stream_context_create($options);
+		// $result = file_get_contents($url, false, $context);
+		// if ($result === FALSE) { /* Handle error */ }
+
+		// var_dump($result);
+
+		// echo "pokus";
+
+		$data = array("username" => "test"); // data u want to post                                                                   
+		$data_string =$query;                                                                                   
+		$api_key = "hackathon";   
+		$password = "AhJ4xie6lie0Opau";                                                                                                                 
+		$ch = curl_init(); 
+		curl_setopt($ch, CURLOPT_URL, $url);    
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");  
+		curl_setopt($ch, CURLOPT_POST, true);                                                                   
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     
+		curl_setopt($ch, CURLOPT_USERPWD, $api_key.':'.$password);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(   
+			'Accept: application/json',
+			'Content-Type: application/json')                                                           
+		);             
+
+		if(curl_exec($ch) === false)
+		{
+			echo 'Curl error: ' . curl_error($ch);
+		}                                                                                                      
+		$errors = curl_error($ch);                                                                                                            
+		$result = curl_exec($ch);
+		$returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		curl_close($ch);  
+		echo $returnCode;
+		var_dump($errors);
+		print_r(json_decode($result, true));
+
+		return $request;
 	}
 }
