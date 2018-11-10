@@ -28,7 +28,7 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 	function prepare()
 	{
 		extract($this->params);
-		if (isset($this->params['item'])) trigger_error('Variable $item overwritten in foreach on line 30');
+		if (isset($this->params['item'])) trigger_error('Variable $item overwritten in foreach on line 71');
 		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
 		
 	}
@@ -55,11 +55,52 @@ class Template247b1c1ceb extends Latte\Runtime\Template
             </nav><!-- Navbar end -->
         </header><!-- Header end -->
         
+        
+
+                  
+          <div class="container">
+          
+  	<div>
+	    <div id="stack-bubble-block">
+	    </div>
+	
+	    <div id="pes-bubble">
+	
+	        <div class="post-text" itemprop="text">
+	                <p>You mean</p>
+	                
+	                <pre class="lang-php prettyprint prettyprinted"><code><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'sms_code'</span><span class="pun">])</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> TRUE </span><span class="pun">)</span><span class="pln"> </span><span class="pun"></span></code>dfffffffffffffffffffffffffffffffffffffffffffffffffff</pre>
+	                
+	                <p>though incidentally you really mean</p>
+	                
+	                <pre class="lang-php prettyprint prettyprinted"><code><span class="kwd">if</span><span class="pun">(</span><span class="pln">isset</span><span class="pun">(</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'sms_code'</span><span class="pun">]))</span><span class="pln"> </span><span class="pun"></span></code></pre>
+            </div>
+	        
+	         
+	    </div>
+	</div>
+          
+          
+           <div class="zaznam">
+		        <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
+				<a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>	
+		        <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
+		    </div>
+		    
+		    <div class="zaznam">
+		        <a href="#"><p class="title">Zeman odkládá cesty. Prezident oproti plánům nepojede do …</p></a>
+				<a href="#"><p class="url">https://www.kupi.cz/letaky/zeman-maso-uzeniny</p></a>	
+		        <p class="description">Ve Varšavě si včera dala schůzku neformální skupina devíti hlav států zemí střední a východní Evropy. Do polské metropole se jich ovšem sjelo jen osm – jako jediný chyběl český prezident Miloš Zeman, který za sebe poslal náhradu v podobě …</p>
+		    </div>
+        </div>                                          
+
+        
+
         <section id="services">
             <div class="container">
                 <h2>OUR SERVICES</h2>
 <?php
-		/* line 22 */ $_tmp = $this->global->uiControl->getComponent("search");
+		/* line 63 */ $_tmp = $this->global->uiControl->getComponent("search");
 		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
 ?>
@@ -95,7 +136,7 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 			foreach ($json->data->organic as $item) {
 ?>
                      <div class="container">
-                        <h2> <?php echo LR\Filters::escapeHtmlText($item->snippet->title) /* line 32 */ ?></h2> 
+                        <h2> <?php echo LR\Filters::escapeHtmlText($item->snippet->title) /* line 73 */ ?></h2> 
                       </div>
 <?php
 				$iterations++;
