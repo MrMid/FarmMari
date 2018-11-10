@@ -46,7 +46,11 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
 ?>
+                
                 </div>
+            </div>
+            <div class="container">
+       
             </div>
         </section>
 <?php

@@ -74,13 +74,14 @@ final class HomepagePresenter extends BasePresenter
 		// zmente podle potreby 
 		$query = '{"query": "{ live_queries }"}';
 		$query1 = '{"query":"{organic(query:\"zeman\"){docId snippet{url description title urlHighlighted}}}"}';
+		$query2 = '{"query":"{organic(query:\"php error\"){snippet{title url description urlHighlighted}attributes{lastChangeDate}}}"}';
 		  echo "<pre>";
-		  echo $query1;
+		  echo $query2;
 		  echo "</pre>";
 
 		// pripoji se k seznamu a vrati JSON dat
 		$data = array("username" => "test");                                                                    
-		$data_string =$query1;                                                                                   
+		$data_string =$query2;                                                                                   
 		$api_key = "hackathon";   
 		$password = "AhJ4xie6lie0Opau";                                                                                                                 
 		$ch = curl_init(); 
@@ -108,8 +109,18 @@ final class HomepagePresenter extends BasePresenter
 		curl_close($ch);  
 		echo $returnCode;
 		var_dump($errors);
-		print_r($result);
+		// print_r($result);
+		$json = json_decode($result);
+		print_r($json->data->organic[0]->snippet->title);
 
 		return $request;
 	}
+
+	protected function createComponentArticle()
+	{
+		$control = new \ArticleControl;
+		return $control;
+	}
 }
+
+
