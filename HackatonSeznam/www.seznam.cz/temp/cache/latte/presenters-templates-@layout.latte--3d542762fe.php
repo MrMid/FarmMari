@@ -33,7 +33,7 @@ class Template3d542762fe extends Latte\Runtime\Template
 			});
 			?> | <?php
 		}
-?>Fake News</title>
+?>Stack Overflow</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlComment($basePath) /* line 13 */ ?>/css/style.css"> -->

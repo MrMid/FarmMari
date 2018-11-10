@@ -73,24 +73,8 @@ final class HomepagePresenter extends BasePresenter
 		// zmente podle potreby 
 		$query = '{"query": "{ live_queries }"}';
 
-		//nastaveni pro https
-		// $options = array(
-		// 	'https' => array(
-		// 		'header'  => $header,
-		// 		'method'  => 'POST',
-		// 		'content' => $query
-		// 	)
-		// );
-
-		// $context  = stream_context_create($options);
-		// $result = file_get_contents($url, false, $context);
-		// if ($result === FALSE) { /* Handle error */ }
-
-		// var_dump($result);
-
-		// echo "pokus";
-
-		$data = array("username" => "test"); // data u want to post                                                                   
+		// pripoji se k seznamu a vrati JSON dat
+		$data = array("username" => "test");                                                                    
 		$data_string =$query;                                                                                   
 		$api_key = "hackathon";   
 		$password = "AhJ4xie6lie0Opau";                                                                                                                 
