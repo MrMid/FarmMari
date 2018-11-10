@@ -55,12 +55,18 @@ return array (
     'App\\Presenters\\HomepagePresenter' => 
     array (
       'file' => 'C:\\xampp\\htdocs\\hackaton\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\HomepagePresenter.php',
-      'time' => 1541837666,
+      'time' => 1541849478,
+    ),
+    'App\\Presenters\\MyService' => 
+    array (
+      'file' => 'C:\\xampp\\htdocs\\hackaton\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\HomepagePresenter.php',
+      'time' => 1541849478,
     ),
   ),
   1 => 
   array (
     'Nette\\Environment' => 3,
     'App\\Presenters\\Control' => 1,
+    'App\\Presenters\\Nette\\Http\\Session' => 3,
   ),
 );

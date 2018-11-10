@@ -55,7 +55,11 @@ return array (
     'App\\Presenters\\HomepagePresenter' => 
     array (
       'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\HomepagePresenter.php',
+<<<<<<< HEAD
       'time' => 1541843839,
+=======
+      'time' => 1541807353,
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477
     ),
   ),
   1 => 

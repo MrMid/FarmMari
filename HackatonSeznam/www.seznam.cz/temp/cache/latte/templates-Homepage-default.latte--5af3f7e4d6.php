@@ -17,6 +17,9 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 	function main()
 	{
 		extract($this->params);
+?>
+
+<?php
 		if ($this->getParentName()) return get_defined_vars();
 		$this->renderBlock('content', get_defined_vars());
 		return get_defined_vars();
@@ -33,10 +36,7 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 
 	function blockContent($_args)
 	{
-		extract($_args);
-?>
-
-<!-- Header -->
+?><!-- Header -->
         <header>
             <!-- Navbar -->
             <nav class="navbar bootsnav">
@@ -45,23 +45,14 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
                     <div class="container">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <?php
-		/* line 12 */
-		echo Nette\Bridges\FormsLatte\Runtime::renderFormBegin($form = $_form = $this->global->formsStack[] = $this->global->uiControl["search"], ['role'=>"form"]);
-?>
-
-                                <?php echo end($this->global->formsStack)["query"]->getControl()->addAttributes(['class'=>"form-control", 'placeholder'=>"Search"]) /* line 13 */ ?>
-
-                            <?php
-		echo Nette\Bridges\FormsLatte\Runtime::renderFormEnd(array_pop($this->global->formsStack));
-?>
-
+                            <input type="text" class="form-control" placeholder="Search">
                         </div>
                     </div>
                 </div>  
             </nav><!-- Navbar end -->
-        </header>
+        </header><!-- Header end -->
         
+<<<<<<< HEAD
         
 
                   
@@ -103,6 +94,41 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 
         
 
+=======
+        <section id="services">
+            <div class="container">
+                <h2>OUR SERVICES</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service_item">
+                            <img src="images/service_img1.jpg" alt="Our Services">
+                            <h3>CONSTRUCTION MANAGEMENT</h3>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
+                            <a href="#services" class="btn know_btn">know more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service_item">
+                            <img src="images/service_img2.jpg" alt="Our Services">
+                            <h3>RENOVATION</h3>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
+                            <a href="#services" class="btn know_btn">know more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service_item">
+                            <img src="images/service_img3.jpg" alt="Our Services">
+                            <h3>ARCHITECTURE</h3>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
+                            <a href="#services" class="btn know_btn">know more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477
                 <!-- Footer -->
         <footer>
             <!-- Footer bottom -->

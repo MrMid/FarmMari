@@ -9,15 +9,14 @@
                     <div class="container">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            {form search, role=>"form"}
-                                {input query, class=>"form-control", placeholder=>"Search"}
-                            {/form}
+                            <input type="text" class="form-control" placeholder="Search" />
                         </div>
                     </div>
                 </div>  
             </nav><!-- Navbar end -->
-        </header>
+        </header><!-- Header end -->
         
+<<<<<<< HEAD
         
 
                   
@@ -59,6 +58,29 @@
 
         
 
+=======
+        <section id="services">
+            <div class="container">
+                <h2>OUR SERVICES</h2>
+                {control search}
+                
+                
+                </div>
+            </div>
+            {control seznam}
+                {if ($json !== null)}
+                 {foreach $json->data->organic as $item} 
+                     <div class="container">
+                        <h2> {$item->snippet->title}</h2> 
+                      </div>
+                 {/foreach}
+                 {/if}
+                 frt
+           
+        </section>
+        
+        
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477
                 <!-- Footer -->
         <footer>
             <!-- Footer bottom -->
