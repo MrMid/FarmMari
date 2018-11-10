@@ -10,7 +10,7 @@ final class HomepagePresenter extends BasePresenter
 	public function renderDefault()
 	{
 		$this->template->anyVariable = 'any value';
-		$answerUrl = $this->queryStackOverflow('database exception', 'mysql');
+		// $answerUrl = $this->queryStackOverflow('database exception', 'mysql');
 	}
 	
 	public function createComponentSearch()
@@ -24,7 +24,7 @@ final class HomepagePresenter extends BasePresenter
 
 	public function searchSucceeded(UI\Form $form, $values)
 	{
-		$this->flashmessage($this->queryStackOverflow($values->query, ''));
+		// $this->flashmessage($this->queryStackOverflow($values->query, ''));
 	}
 
 	private function queryStackOverflow($query, $matchedTag)
