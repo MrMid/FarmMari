@@ -27,11 +27,6 @@ return array (
       'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\model\\UserManager.php',
       'time' => 1537266824,
     ),
-    'App\\Presenters\\BasePresenter' => 
-    array (
-      'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\BasePresenter.php',
-      'time' => 1537266824,
-    ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
       'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\Error4xxPresenter.php',
@@ -52,10 +47,19 @@ return array (
       'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\router\\RouterFactory.php',
       'time' => 1537266824,
     ),
+    'App\\Presenters\\BasePresenter' => 
+    array (
+      'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\BasePresenter.php',
+      'time' => 1541843839,
+    ),
     'App\\Presenters\\HomepagePresenter' => 
     array (
       'file' => 'C:\\wamp64\\www\\FarmMari\\HackatonSeznam\\www.seznam.cz\\app\\presenters\\HomepagePresenter.php',
+<<<<<<< HEAD
       'time' => 1541807353,
+=======
+      'time' => 1541853695,
+>>>>>>> 8546e6bb40049414395e96d79f2724ae3db465d0
     ),
   ),
   1 => 
