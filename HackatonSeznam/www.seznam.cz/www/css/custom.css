@@ -1,4 +1,17 @@
 /* General styles */
+html{
+	
+	height: 100%;
+ 	box-sizing: border-box;
+	
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
     font-size: 15px;
     line-height: 24px;
@@ -583,8 +596,8 @@ nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:fo
 footer {
     background: url(../images/footer_bg.jpg)no-repeat;
     background-size:cover;
-    position:relative;
-    padding-top:45px;
+	position: relative;
+	padding-top:45px;	
 }
 footer::before {
     background: rgba(255, 255, 255, 0.33) none repeat scroll 0 0;
@@ -1252,6 +1265,11 @@ footer::after {
 
 	
 	
+	
+.tlacitkoSearch{
+	float:right;
+	height: 40px;
+}
 	
 
 
