@@ -17,9 +17,6 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 	function main()
 	{
 		extract($this->params);
-?>
-
-<?php
 		if ($this->getParentName()) return get_defined_vars();
 		$this->renderBlock('content', get_defined_vars());
 		return get_defined_vars();
@@ -36,7 +33,10 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
 
 	function blockContent($_args)
 	{
-?><!-- Header -->
+		extract($_args);
+?>
+
+<!-- Header -->
         <header>
             <!-- Navbar -->
             <nav class="navbar bootsnav">
@@ -45,46 +45,52 @@ class Template5af3f7e4d6 extends Latte\Runtime\Template
                     <div class="container">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search">
+                            <?php
+		/* line 12 */
+		echo Nette\Bridges\FormsLatte\Runtime::renderFormBegin($form = $_form = $this->global->formsStack[] = $this->global->uiControl["search"], ['role'=>"form"]);
+?>
+
+                                <?php echo end($this->global->formsStack)["query"]->getControl()->addAttributes(['class'=>"form-control", 'placeholder'=>"Search"]) /* line 13 */ ?>
+
+                            <?php
+		echo Nette\Bridges\FormsLatte\Runtime::renderFormEnd(array_pop($this->global->formsStack));
+?>
+
                         </div>
                     </div>
                 </div>  
             </nav><!-- Navbar end -->
-        </header><!-- Header end -->
+        </header>
         
-        <section id="services">
+<!--        <section id="services">
             <div class="container">
                 <h2>OUR SERVICES</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="service_item">
-                            <img src="images/service_img1.jpg" alt="Our Services">
-                            <h3>CONSTRUCTION MANAGEMENT</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                            <a href="#services" class="btn know_btn">know more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service_item">
-                            <img src="images/service_img2.jpg" alt="Our Services">
-                            <h3>RENOVATION</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                            <a href="#services" class="btn know_btn">know more</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service_item">
-                            <img src="images/service_img3.jpg" alt="Our Services">
-                            <h3>ARCHITECTURE</h3>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
-                            <a href="#services" class="btn know_btn">know more</a>
-                        </div>
-                    </div>
+<?php
+		/* line 24 */ $_tmp = $this->global->uiControl->getComponent("search");
+		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
+		$_tmp->render();
+		/* line 25 */ $_tmp = $this->global->uiControl->getComponent("seznam");
+		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
+		$_tmp->render();
+?>
                 </div>
             </div>
-        </section>
-        
-        
+        </section>-->
+
+                    
+    <div class="zaznam">
+        <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
+		<a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>	
+        <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
+    </div>
+    
+    <div class="zaznam">
+        <a href="#"><p class="title">Zeman odkládá cesty. Prezident oproti plánům nepojede do …</p></a>
+		<a href="#"><p class="url">https://www.kupi.cz/letaky/zeman-maso-uzeniny</p></a>	
+        <p class="description">Ve Varšavě si včera dala schůzku neformální skupina devíti hlav států zemí střední a východní Evropy. Do polské metropole se jich ovšem sjelo jen osm – jako jediný chyběl český prezident Miloš Zeman, který za sebe poslal náhradu v podobě …</p>
+    </div>
+
+                                                                     
                 <!-- Footer -->
         <footer>
             <!-- Footer bottom -->

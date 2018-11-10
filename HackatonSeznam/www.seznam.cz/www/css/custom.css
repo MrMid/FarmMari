@@ -728,10 +728,45 @@ footer::after {
         margin-right: 50px;
     }
 
+	.title {	
+		font-size: 20px;
+		margin:0px;	
+		color: #7b009d;
+		
+	}
+	
+	.title:hover {
+    	text-decoration: underline;
+	}
+
+	.description{
+		margin-top:0px;	
+		padding:0px;
+		font-size:13px;
+		color:#444444d9;
+		width: 500px;
+	}
+	
+	.url{
+		color: green;
+		font-size:14px;
+		padding:0px;
+		margin:0px;
+	}
+	
+	.url:hover{
+		text-decoration: underline;
+	}
+	
+	.zaznam{
+		margin: 20px 10px 20px 10px;
+	}
+
+
 
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1299px) {
     h1 {
         font-size: 50px;
         line-height: 55px;
@@ -775,6 +810,40 @@ footer::after {
     #contact_form .btn.submit_btn {
         width: 95px;
     }
+    
+	.title {	
+		font-size: 20px;
+		margin:0px;	
+		color: #7b009d;
+		
+	}
+	
+	.title:hover {
+    	text-decoration: underline;
+	}
+
+	.description{
+		margin-top:0px;	
+		padding:0px;
+		font-size:13px;
+		color:#444444d9;
+		width: 500px;
+	}
+	
+	.url{
+		color: green;
+		font-size:14px;
+		padding:0px;
+		margin:0px;
+	}
+	
+	.url:hover{
+		text-decoration: underline;
+	}
+	
+	.zaznam{
+		margin: 20px 10px 20px 10px;
+	}
 
 
 }
@@ -830,6 +899,40 @@ footer::after {
         width: 168px;
     }
 
+
+	.title {	
+		font-size: 20px;
+		margin:0px;	
+		color: #7b009d;
+		
+	}
+	
+	.title:hover {
+    	text-decoration: underline;
+	}
+
+	.description{
+		margin-top:0px;	
+		padding:0px;
+		font-size:13px;
+		color:#444444d9;
+		width: 500px;
+	}
+	
+	.url{
+		color: green;
+		font-size:14px;
+		padding:0px;
+		margin:0px;
+	}
+	
+	.url:hover{
+		text-decoration: underline;
+	}
+	
+	.zaznam{
+		margin: 20px 10px 20px 10px;
+	}
 
 }
 
@@ -897,6 +1000,40 @@ footer::after {
         margin: 0;
         width: 145px;
     }
+    
+	.title {	
+		font-size: 15px;
+		margin:0px;	
+		color: #7b009d;
+		
+	}
+	
+	.title:hover {
+    	text-decoration: underline;
+	}
+
+	.description{
+		margin-top:0px;	
+		padding:0px;
+		font-size:11px;
+		color:#444444d9;
+		width: 400px;
+	}
+	
+	.url{
+		color: green;
+		font-size:13px;
+		padding:0px;
+		margin:0px;
+	}
+	
+	.url:hover{
+		text-decoration: underline;
+	}
+	
+	.zaznam{
+		margin: 15px 5px 15px 5px;
+	}
 
 
 }
@@ -969,5 +1106,43 @@ footer::after {
         padding: 8px 3px;
     }
 
+	.title {	
+		font-size: 15px;
+		margin:0px;	
+		color: #7b009d;
+		
+	}
+	
+	.title:hover {
+    	text-decoration: underline;
+	}
 
+	.description{
+		margin-top:0px;	
+		padding:0px;
+		font-size:11px;
+		color:#444444d9;
+		width: 400px;
+	}
+	
+	.url{
+		color: green;
+		font-size:13px;
+		padding:0px;
+		margin:0px;
+	}
+	
+	.url:hover{
+		text-decoration: underline;
+	}
+	
+	.zaznam{
+		margin: 15px 5px 15px 5px;
+	}
 }
+
+	
+	
+	
+
+
