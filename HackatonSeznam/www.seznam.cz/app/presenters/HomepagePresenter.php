@@ -25,27 +25,37 @@ final class HomepagePresenter extends BasePresenter
 
 	public function searchSucceeded(UI\Form $form, $values)
 	{
-		// $this->flashmessage($this->queryStackOverflow($values->query, ''));
+		$langs = ["C", "C++", "Go", "Java", "Python", "PHP", "Hack", "HHVM", "Python", "Erlang", "Haskell", "Perl", "Scala", "Ruby", "C#", "JavaScript", "Django", "Swift", "jQuery", "HTML", "CSS", "TypeScript", "Objective-C", "VB.NET", "VB", "Assembler", "R", "VBA", "Matlab", "Groovy", "CoffeeScript", "Visual Basic", "Lua", "HTML5", "CSS3", "basic", "Bigtable", "MariaDB", "MySQL", "HBase", "Cassandra", "SQL", "Vitess", "PostgreSQL", "HBase", "MongoDB", "Oracle Database", "Microsoft SQL Server", "Cosmos", "Voldemort", "Redis", "ASP.NET", "MVC", "BFC", "DotNetNuke", "MonoRail", "Umbraco", "CppCMS", "AppFuse", "Flexive", "Grails", "GWT", "ItsNat", "JavaServer Faces", "Makumba", "OpenXava", "Reasonable Server Faces", "Restlet", "RIFE", "Seam", "Spring", "Stripes", "Struts", "Tapestry", "Vaadin", "WebWork", "Wicket", "ZK", "AngularJS", "Archetype", "Bonsai", "Brick", "CreateJS", "D3", "Dojo", "Ember", "Enyo", "ExtJs", "FabricJS", "Fleegix", "JavaScriptMVC", "jQuery", "jTypes", "KineticJS", "Knockout.js", "Lo-dash", "midori", "MooTools", "NodeJs", "PaperJS", "Processing.js", "Prototype", "qooxdoo", "Raphael", "React", "RightJS", "Shipyard", "SimpleJS", "SproutCore", "Spry", "The X Toolkit", "Thorax", "Tree.js", "UIZE", "Underscore", "WebApp Install", "YUI", "Zepto", "Catalyst", "Interchange", "Mason", "Agavi", "Akelos", "CakePHP", "Chisimba", "CodeIgniter", "Garden", "Horde", "Jelix", "Kohana", "Kolibri", "KumbiaPHP", "Laravel", "Midgard", "Nette", "Orinoco", "PHPonTrax", "PRADO", "Qcodo", "Qcubed", "Seagull", "Simplicity", "Symfony", "WASP", "Zope", "Django", "Flask", "Pyjamas", "Pylons", "TurboGears", "web2py", "Zope"];
+		$keyWordsList = $langs;
+		$q = explode(' ', $values->query);
+		$intersect = array_intersect($q, $keyWordsList);
+		if (sizeof($intersect) !== 0) {
+			$this->flashmessage($this->queryStackOverflow($values->query, $intersect));
+		}
+		else $this->flashMessage("Not a programming question.");
 	}
 
-	private function queryStackOverflow($query, $matchedTag)
+	private function queryStackOverflow($query, $matchedTags)
 	{
-		$question = $this->queryQuestions($query, $matchedTag);
-		$answerID = $this->getAnswer($question->items[0]->question_id)->answer_id;
-		$answerUrl = 'https://stackoverflow.com/a/' . $answerID;
-		return $answerUrl;
+		$question = $this->queryQuestions($query, $matchedTags);
+		$answer = $this->getAnswer($question->items[0]->question_id);
+		if (isset($answer->answer_id)) {
+			$answerUrl = 'https://stackoverflow.com/a/' . $answerID;
+			return $answerUrl;
+		}
+		return NULL;
 	}
 
-	private function queryQuestions($query, $tag)
+	private function queryQuestions($query, $tags)
 	{
-		$q = file_get_contents('https://api.stackexchange.com/2.2/search?tagged=' . urlencode($tag) . '&intitle=' . urlencode($query) . '&site=stackoverflow&sort=votes');
+		$q = file_get_contents('https://api.stackexchange.com/2.2/search?tagged=' . urlencode(join(";",$tags)) . '&intitle=' . urlencode($query) . '&site=stackoverflow&sort=votes&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
 		$q = json_decode(gzinflate(substr($q, 10)));
 		return $q;
 	}
 
 	private function getAnswer($questionID)
 	{
-		$answers = file_get_contents('https://api.stackexchange.com/2.2/questions/' . $questionID . '/answers?order=desc&sort=votes&site=stackoverflow');
+		$answers = file_get_contents('https://api.stackexchange.com/2.2/questions/' . $questionID . '/answers?order=desc&sort=votes&site=stackoverflow&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
 		$answers = json_decode(gzinflate(substr($answers, 10)));
 		$answer = NULL;
 		foreach ($answers->items as $a) {
@@ -75,13 +85,14 @@ final class HomepagePresenter extends BasePresenter
 		// zmente podle potreby 
 		$query = '{"query": "{ live_queries }"}';
 		$query1 = '{"query":"{organic(query:\"zeman\"){docId snippet{url description title urlHighlighted}}}"}';
+		$query2 = '{"query":"{organic(query:\"php error\"){snippet{title url description urlHighlighted}attributes{lastChangeDate}}}"}';
 		  echo "<pre>";
-		  echo $query1;
+		  echo $query2;
 		  echo "</pre>";
 
 		// pripoji se k seznamu a vrati JSON dat
 		$data = array("username" => "test");                                                                    
-		$data_string =$query1;                                                                                   
+		$data_string =$query2;                                                                                   
 		$api_key = "hackathon";   
 		$password = "AhJ4xie6lie0Opau";                                                                                                                 
 		$ch = curl_init(); 
@@ -109,8 +120,18 @@ final class HomepagePresenter extends BasePresenter
 		curl_close($ch);  
 		echo $returnCode;
 		var_dump($errors);
-		print_r($result);
+		// print_r($result);
+		$json = json_decode($result);
+		print_r($json->data->organic[0]->snippet->title);
 
 		return $request;
 	}
+
+	protected function createComponentArticle()
+	{
+		$control = new \ArticleControl;
+		return $control;
+	}
 }
+
+
