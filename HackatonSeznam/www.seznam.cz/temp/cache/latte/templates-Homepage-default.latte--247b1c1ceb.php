@@ -65,10 +65,8 @@ class Template247b1c1ceb extends Latte\Runtime\Template
                 
                 </div>
             </div>
+            
 <?php
-		/* line 27 */ $_tmp = $this->global->uiControl->getComponent("seznam");
-		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
-		$_tmp->render();
 		if (($json !== null)) {
 ?>
 
@@ -85,6 +83,7 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 		}
 ?>
                  frt
+            
            
         </section>
         
