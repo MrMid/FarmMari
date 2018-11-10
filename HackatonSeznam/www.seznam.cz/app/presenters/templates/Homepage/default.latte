@@ -24,8 +24,9 @@
                 
                 </div>
             </div>
-            {control seznam}
+            {snippet seznam}
                 {if ($json !== null)}
+                hhi
                  {foreach $json->data->organic as $item} 
                      <div class="container">
                         <h2> {$item->snippet->title}</h2> 
@@ -33,7 +34,7 @@
                  {/foreach}
                  {/if}
                  frt
-           
+           {/snippet}
         </section>
         
         

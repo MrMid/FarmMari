@@ -7,10 +7,12 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 {
 	public $blocks = [
 		'content' => 'blockContent',
+		'_seznam' => 'blockSeznam',
 	];
 
 	public $blockTypes = [
 		'content' => 'html',
+		'_seznam' => 'html',
 	];
 
 
@@ -65,13 +67,29 @@ class Template247b1c1ceb extends Latte\Runtime\Template
                 
                 </div>
             </div>
+<div id="<?php echo htmlSpecialChars($this->global->snippetDriver->getHtmlId('seznam')) ?>"><?php $this->renderBlock('_seznam', $this->params) ?></div>        </section>
+        
+        
+                <!-- Footer -->
+        <footer>
+            <!-- Footer bottom -->
+            <div class="footer_bottom text-center">
+                <p class="wow fadeInRight">
+                    Tým Farmáři.
+                </p>
+            </div><!-- Footer bottom end -->
+        </footer><!-- Footer end -->
 <?php
-		/* line 27 */ $_tmp = $this->global->uiControl->getComponent("seznam");
-		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
-		$_tmp->render();
+	}
+
+
+	function blockSeznam($_args)
+	{
+		extract($_args);
+		$this->global->snippetDriver->enter("seznam", "static");
 		if (($json !== null)) {
 ?>
-
+                hhi
 <?php
 			$iterations = 0;
 			foreach ($json->data->organic as $item) {
@@ -85,20 +103,9 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 		}
 ?>
                  frt
-           
-        </section>
-        
-        
-                <!-- Footer -->
-        <footer>
-            <!-- Footer bottom -->
-            <div class="footer_bottom text-center">
-                <p class="wow fadeInRight">
-                    Tým Farmáři.
-                </p>
-            </div><!-- Footer bottom end -->
-        </footer><!-- Footer end -->
 <?php
+		$this->global->snippetDriver->leave();
+		
 	}
 
 }
