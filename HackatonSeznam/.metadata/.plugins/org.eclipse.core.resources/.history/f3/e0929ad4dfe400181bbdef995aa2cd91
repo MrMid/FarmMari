@@ -731,7 +731,11 @@ footer::after {
 
 }
 
+<<<<<<< HEAD
 @media (max-width: 1399px) {
+=======
+@media (max-width: 1199px) {
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477
     h1 {
         font-size: 50px;
         line-height: 55px;
@@ -971,6 +975,7 @@ footer::after {
 
 
 }
+<<<<<<< HEAD
 
 <!-- SO -->
 #stack-bubble-block {
@@ -1080,3 +1085,11 @@ footer::after {
 .lit {
     color: #7D2727;
 }
+
+	
+	
+	
+
+
+=======
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477

@@ -16,6 +16,7 @@
             </nav><!-- Navbar end -->
         </header><!-- Header end -->
         
+<<<<<<< HEAD
         
 
                   
@@ -43,20 +44,21 @@
           
           
            <div class="zaznam">
-		        <a href="#"><p class="title">Zeman poblahopÅ™Ã¡l DrahoÅ¡ovi: Je to to cena ÃºtÄ›chy â€¦</p></a>
+		        <a href="#"><p class="title">Zeman poblahopřál Drahošovi: Je to to cena útěchy …</p></a>
 				<a href="#"><p class="url">https://www.novinky.cz/domaci/485359-zeman-poblahopral-drahosovi-je-to-cena-utechy.html</p></a>	
-		        <p class="description">PÅ™Ã­zviska MiloÅ¡e Zemana se bÄ›hem let rÅ¯znila: muÅ¾, kterÃ½ pozvedl ÄŒSSD ze dna, pragmatickÃ½ premiÃ©r, vulgÃ¡rnÃ­ premiÃ©r, unavenÃ½ premiÃ©r, neÃºspÄ›Å¡nÃ½ kandidÃ¡t na prezidenta, zatrpklÃ½ dÅ¯chodce z VysoÄ�iny.</p>
+		        <p class="description">Přízviska Miloše Zemana se během let různila: muž, který pozvedl ČSSD ze dna, pragmatický premiér, vulgární premiér, unavený premiér, neúspěšný kandidát na prezidenta, zatrpklý důchodce z Vysočiny.</p>
 		    </div>
 		    
 		    <div class="zaznam">
-		        <a href="#"><p class="title">Zeman odklÃ¡dÃ¡ cesty. Prezident oproti plÃ¡nÅ¯m nepojede do â€¦</p></a>
+		        <a href="#"><p class="title">Zeman odkládá cesty. Prezident oproti plánům nepojede do …</p></a>
 				<a href="#"><p class="url">https://www.kupi.cz/letaky/zeman-maso-uzeniny</p></a>	
-		        <p class="description">Ve VarÅ¡avÄ› si vÄ�era dala schÅ¯zku neformÃ¡lnÃ­ skupina devÃ­ti hlav stÃ¡tÅ¯ zemÃ­ stÅ™ednÃ­ a vÃ½chodnÃ­ Evropy. Do polskÃ© metropole se jich ovÅ¡em sjelo jen osm â€“ jako jedinÃ½ chybÄ›l Ä�eskÃ½ prezident MiloÅ¡ Zeman, kterÃ½ za sebe poslal nÃ¡hradu v podobÄ› â€¦</p>
+		        <p class="description">Ve Varšavě si včera dala schůzku neformální skupina devíti hlav států zemí střední a východní Evropy. Do polské metropole se jich ovšem sjelo jen osm – jako jediný chyběl český prezident Miloš Zeman, který za sebe poslal náhradu v podobě …</p>
 		    </div>
         </div>                                          
 
         
 
+=======
         <section id="services">
             <div class="container">
                 <h2>OUR SERVICES</h2>
@@ -65,9 +67,8 @@
                 
                 </div>
             </div>
-            {snippet seznam}
+            {control seznam}
                 {if ($json !== null)}
-                hhi
                  {foreach $json->data->organic as $item} 
                      <div class="container">
                         <h2> {$item->snippet->title}</h2> 
@@ -75,16 +76,17 @@
                  {/foreach}
                  {/if}
                  frt
-           {/snippet}
+           
         </section>
         
         
+>>>>>>> 6587491ae8d5d426fe3b9c3c6dce565583da7477
                 <!-- Footer -->
         <footer>
             <!-- Footer bottom -->
             <div class="footer_bottom text-center">
                 <p class="wow fadeInRight">
-                    TÃ½m FarmÃ¡Å™i.
+                    Tým Farmáři.
                 </p>
             </div><!-- Footer bottom end -->
         </footer><!-- Footer end -->
