@@ -18,38 +18,6 @@ final class HomepagePresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		$j = json_decode("{
-			\"data\": {
-			  \"organic\": [
-				{
-					\"snippet\": {
-					\"title\": \"<b class=pri>PHP</b>: <b class=pri>error</b>_reporting - Manual\",
-					\"url\": \"http://php.net/manual/en/function.error-reporting.php\",
-					\"description\": \"<b class=sec>error</b>_reporting — Sets which <b class=sec>PHP</b> <b class=sec>errors</b> are reported\",
-					\"urlHighlighted\": \"<b class=sec>php</b>.net/manual/en/function.<b class=sec>error</b>-reporting.php\"
-				  },
-				  \"attributes\": {
-					\"lastChangeDate\": 1517227439
-				  }
-				},
-				{
-					\"snippet\": {
-					\"title\": \"<b class=pri>PHP</b>: <b class=pri>error</b>_reporting - Manual\",
-					\"url\": \"http://php.net/manual/en/function.error-reporting.php\",
-					\"description\": \"<b class=sec>error</b>_reporting — Sets which <b class=sec>PHP</b> <b class=sec>errors</b> are reported\",
-					\"urlHighlighted\": \"<b class=sec>php</b>.net/manual/en/function.<b class=sec>error</b>-reporting.php\"
-				  },
-				  \"attributes\": {
-					\"lastChangeDate\": 1517227439
-				  }
-				}
-			  ]
-			}
-		  }");
-		
-		  $this->template->mujJSON = $j;
-		
-		// $answerUrl = $this->queryStackOverflow('database exception', 'mysql');
 	}
 	
 	public function createComponentSearch()
@@ -63,8 +31,10 @@ final class HomepagePresenter extends BasePresenter
 
 	public function searchSucceeded(UI\Form $form, $values)
 	{
-		$this->flashmessage($this->queryStackOverflow($values->query, ''));
-		$this->redirect('Homepage:');
+		// $this->flashmessage($this->queryStackOverflow($values->query, ''));
+		$seznam = $this->seznamSearch($values->query);
+		$this->template->json = $seznam;
+		$this->redrawControl('seznam');
 	}
 
 	private function queryStackOverflow($query, $matchedTag)
@@ -102,11 +72,12 @@ final class HomepagePresenter extends BasePresenter
 	public function createComponentSeznam()
 	{
 		$request = New UI\Form();
+		return $request;
+	}
+
+	private function seznamSearch($imput)
+	{
 		$url = 'https://cqc.seznam.net/hackathon/graphql';
-		$url1 = 'http://midaga.eu:9999';
-
-		$myJSON = $this->sessionSection;
-
 		//headry
 		$header = array();
 		$header[] = 'Content-length: 0';
@@ -115,7 +86,7 @@ final class HomepagePresenter extends BasePresenter
 		
 		// zmente podle potreby 
 		$query = '{"query": "{ live_queries }"}';
-		$query1 = '{"query":"{organic(query:\"zeman\"){docId snippet{url description title urlHighlighted}}}"}';
+		$query1 = '{"query":"{organic(query:\"'.$imput.'\"){docId snippet{url description title urlHighlighted}}}"}';
 		$query2 = '{"query":"{organic(query:\"php error\"){snippet{title url description urlHighlighted}attributes{lastChangeDate}}}"}';
 		//   echo "<pre>";
 		//   echo $query2;
@@ -123,7 +94,7 @@ final class HomepagePresenter extends BasePresenter
 
 		// pripoji se k seznamu a vrati JSON dat
 		$data = array("username" => "test");                                                                    
-		$data_string =$query2;                                                                                   
+		$data_string =$query1;                                                                                   
 		$api_key = "hackathon";   
 		$password = "AhJ4xie6lie0Opau";                                                                                                                 
 		$ch = curl_init(); 
@@ -153,42 +124,6 @@ final class HomepagePresenter extends BasePresenter
 		// var_dump($errors);
 		// print_r($result);
 		$json = json_decode($result);
-		$this->jsonn = $json;
-		// print_r($json->data->organic[0]->snippet->title);
-
-		//$myJSON-> $json;
-		//echo $myJSON;
-		$this->template->mujJSON = $json;
-
-
-		return $request;
+		return $json;
 	}
-
-	/**funkce k nicemu zatim */
-	protected function createComponentArticle()
-	{
-		$control = new \ArticleControl;
-		return $control;
-	}
-
 }
-
-class MyService
-{
-    /** @var Nette\Http\Session */
-    private $session;
-
-    /** @var Nette\Http\SessionSection */
-    private $sessionSection;
-
-    public function __construct(Nette\Http\Session $session)
-    {
-        $this->session = $session;
-
-        // a získáme přístup do sekce 'mySection':
-        $this->sessionSection = $session->getSection('mySection');
-    }
-}
-
-
-

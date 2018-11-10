@@ -69,12 +69,12 @@ class Template247b1c1ceb extends Latte\Runtime\Template
 		/* line 27 */ $_tmp = $this->global->uiControl->getComponent("seznam");
 		if ($_tmp instanceof Nette\Application\UI\IRenderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
-		if (($mujJSON !== null)) {
+		if (($json !== null)) {
 ?>
-               
+
 <?php
 			$iterations = 0;
-			foreach ($mujJSON->data->organic as $item) {
+			foreach ($json->data->organic as $item) {
 ?>
                      <div class="container">
                         <h2> <?php echo LR\Filters::escapeHtmlText($item->snippet->title) /* line 32 */ ?></h2> 

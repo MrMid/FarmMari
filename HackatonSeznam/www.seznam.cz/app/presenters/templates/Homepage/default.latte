@@ -25,9 +25,9 @@
                 </div>
             </div>
             {control seznam}
-                {if ($mujJSON !== null)}
-               
-                 {foreach $mujJSON->data->organic as $item} 
+                {if ($json !== null)}
+
+                 {foreach $json->data->organic as $item} 
                      <div class="container">
                         <h2> {$item->snippet->title}</h2> 
                       </div>
