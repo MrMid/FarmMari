@@ -11,7 +11,6 @@ final class HomepagePresenter extends BasePresenter
 	public function renderDefault()
 	{
 		$this->template->anyVariable = 'any value';
-		// $answerUrl = $this->queryStackOverflow('database exception', 'mysql');
 	}
 	
 	public function createComponentSearch()
@@ -26,11 +25,11 @@ final class HomepagePresenter extends BasePresenter
 	public function searchSucceeded(UI\Form $form, $values)
 	{
 		$langs = ["C", "C++", "Go", "Java", "Python", "PHP", "Hack", "HHVM", "Python", "Erlang", "Haskell", "Perl", "Scala", "Ruby", "C#", "JavaScript", "Django", "Swift", "jQuery", "HTML", "CSS", "TypeScript", "Objective-C", "VB.NET", "VB", "Assembler", "R", "VBA", "Matlab", "Groovy", "CoffeeScript", "Visual Basic", "Lua", "HTML5", "CSS3", "basic", "Bigtable", "MariaDB", "MySQL", "HBase", "Cassandra", "SQL", "Vitess", "PostgreSQL", "HBase", "MongoDB", "Oracle Database", "Microsoft SQL Server", "Cosmos", "Voldemort", "Redis", "ASP.NET", "MVC", "BFC", "DotNetNuke", "MonoRail", "Umbraco", "CppCMS", "AppFuse", "Flexive", "Grails", "GWT", "ItsNat", "JavaServer Faces", "Makumba", "OpenXava", "Reasonable Server Faces", "Restlet", "RIFE", "Seam", "Spring", "Stripes", "Struts", "Tapestry", "Vaadin", "WebWork", "Wicket", "ZK", "AngularJS", "Archetype", "Bonsai", "Brick", "CreateJS", "D3", "Dojo", "Ember", "Enyo", "ExtJs", "FabricJS", "Fleegix", "JavaScriptMVC", "jQuery", "jTypes", "KineticJS", "Knockout.js", "Lo-dash", "midori", "MooTools", "NodeJs", "PaperJS", "Processing.js", "Prototype", "qooxdoo", "Raphael", "React", "RightJS", "Shipyard", "SimpleJS", "SproutCore", "Spry", "The X Toolkit", "Thorax", "Tree.js", "UIZE", "Underscore", "WebApp Install", "YUI", "Zepto", "Catalyst", "Interchange", "Mason", "Agavi", "Akelos", "CakePHP", "Chisimba", "CodeIgniter", "Garden", "Horde", "Jelix", "Kohana", "Kolibri", "KumbiaPHP", "Laravel", "Midgard", "Nette", "Orinoco", "PHPonTrax", "PRADO", "Qcodo", "Qcubed", "Seagull", "Simplicity", "Symfony", "WASP", "Zope", "Django", "Flask", "Pyjamas", "Pylons", "TurboGears", "web2py", "Zope"];
-		$keyWordsList = $langs;
-		$q = explode(' ', $values->query);
+		$keyWordsList = array_map('strtolower', $langs);
+		$q = array_map('strtolower', explode(' ', $values->query));
 		$intersect = array_intersect($q, $keyWordsList);
 		if (sizeof($intersect) !== 0) {
-			$this->flashmessage($this->queryStackOverflow($values->query, $intersect));
+			$this->flashmessage($this->queryStackOverflow($values->query, $intersect)??'');
 		}
 		else $this->flashMessage("Not a programming question.");
 	}
@@ -38,9 +37,10 @@ final class HomepagePresenter extends BasePresenter
 	private function queryStackOverflow($query, $matchedTags)
 	{
 		$question = $this->queryQuestions($query, $matchedTags);
-		$answer = $this->getAnswer($question->items[0]->question_id);
-		if (isset($answer->answer_id)) {
-			$answerUrl = 'https://stackoverflow.com/a/' . $answerID;
+		
+		if (sizeof($question->items) !== 0) {
+			$answer = $this->getAnswer($question->items[0]->question_id);
+			$answerUrl = 'https://stackoverflow.com/a/' . $answer->answer_id;
 			return $answerUrl;
 		}
 		return NULL;
@@ -57,16 +57,12 @@ final class HomepagePresenter extends BasePresenter
 	{
 		$answers = file_get_contents('https://api.stackexchange.com/2.2/questions/' . $questionID . '/answers?order=desc&sort=votes&site=stackoverflow&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
 		$answers = json_decode(gzinflate(substr($answers, 10)));
-		$answer = NULL;
 		foreach ($answers->items as $a) {
 			if ($a->is_accepted) {
-				$answer = $a;
+				return $a;				
 			}
 		}
-		if ($answer === NULL) {
-			$answer = $answers->items[0];
-		}
-		return $answer;
+		return $answers->items[0];
 	}
 
 	// takhle komponenta bdue vyhledavat data na zaklade vyhledavane souslovi z platformy od Seznamu
