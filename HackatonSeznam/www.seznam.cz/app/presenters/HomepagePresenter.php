@@ -7,17 +7,55 @@ use Nette\Application\UI;
 
 final class HomepagePresenter extends BasePresenter
 {
-	
+	/** @persistent */
+	public $jsonn=null;
+
+	/** @var \Nette\Http\SessionSection */
+	private $session;
+
+	/** @var Nette\Http\SessionSection */
+    private $sessionSection;
+
 	public function renderDefault()
 	{
-		$this->template->anyVariable = 'any value';
+		$j = json_decode("{
+			\"data\": {
+			  \"organic\": [
+				{
+					\"snippet\": {
+					\"title\": \"<b class=pri>PHP</b>: <b class=pri>error</b>_reporting - Manual\",
+					\"url\": \"http://php.net/manual/en/function.error-reporting.php\",
+					\"description\": \"<b class=sec>error</b>_reporting — Sets which <b class=sec>PHP</b> <b class=sec>errors</b> are reported\",
+					\"urlHighlighted\": \"<b class=sec>php</b>.net/manual/en/function.<b class=sec>error</b>-reporting.php\"
+				  },
+				  \"attributes\": {
+					\"lastChangeDate\": 1517227439
+				  }
+				},
+				{
+					\"snippet\": {
+					\"title\": \"<b class=pri>PHP</b>: <b class=pri>error</b>_reporting - Manual\",
+					\"url\": \"http://php.net/manual/en/function.error-reporting.php\",
+					\"description\": \"<b class=sec>error</b>_reporting — Sets which <b class=sec>PHP</b> <b class=sec>errors</b> are reported\",
+					\"urlHighlighted\": \"<b class=sec>php</b>.net/manual/en/function.<b class=sec>error</b>-reporting.php\"
+				  },
+				  \"attributes\": {
+					\"lastChangeDate\": 1517227439
+				  }
+				}
+			  ]
+			}
+		  }");
+		
+		  $this->template->mujJSON = $j;
+		
 		// $answerUrl = $this->queryStackOverflow('database exception', 'mysql');
 	}
 	
 	public function createComponentSearch()
 	{
 		$form = New UI\Form();
-		$form->addText('query', 'Query:');
+		$form->addText('query', 'Query:')->setRequired(true);
 		$form->addSubmit('search', 'Find');
 		$form->onSuccess[] = [$this, 'searchSucceeded'];
 		return $form;
@@ -26,6 +64,7 @@ final class HomepagePresenter extends BasePresenter
 	public function searchSucceeded(UI\Form $form, $values)
 	{
 		$this->flashmessage($this->queryStackOverflow($values->query, ''));
+		$this->redirect('Homepage:');
 	}
 
 	private function queryStackOverflow($query, $matchedTag)
@@ -66,6 +105,8 @@ final class HomepagePresenter extends BasePresenter
 		$url = 'https://cqc.seznam.net/hackathon/graphql';
 		$url1 = 'http://midaga.eu:9999';
 
+		$myJSON = $this->sessionSection;
+
 		//headry
 		$header = array();
 		$header[] = 'Content-length: 0';
@@ -76,9 +117,9 @@ final class HomepagePresenter extends BasePresenter
 		$query = '{"query": "{ live_queries }"}';
 		$query1 = '{"query":"{organic(query:\"zeman\"){docId snippet{url description title urlHighlighted}}}"}';
 		$query2 = '{"query":"{organic(query:\"php error\"){snippet{title url description urlHighlighted}attributes{lastChangeDate}}}"}';
-		  echo "<pre>";
-		  echo $query2;
-		  echo "</pre>";
+		//   echo "<pre>";
+		//   echo $query2;
+		//   echo "</pre>";
 
 		// pripoji se k seznamu a vrati JSON dat
 		$data = array("username" => "test");                                                                    
@@ -108,20 +149,46 @@ final class HomepagePresenter extends BasePresenter
 		$result = curl_exec($ch);
 		$returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		curl_close($ch);  
-		echo $returnCode;
-		var_dump($errors);
+		// echo $returnCode;
+		// var_dump($errors);
 		// print_r($result);
 		$json = json_decode($result);
-		print_r($json->data->organic[0]->snippet->title);
+		$this->jsonn = $json;
+		// print_r($json->data->organic[0]->snippet->title);
+
+		//$myJSON-> $json;
+		//echo $myJSON;
+		$this->template->mujJSON = $json;
+
 
 		return $request;
 	}
 
+	/**funkce k nicemu zatim */
 	protected function createComponentArticle()
 	{
 		$control = new \ArticleControl;
 		return $control;
 	}
+
 }
+
+class MyService
+{
+    /** @var Nette\Http\Session */
+    private $session;
+
+    /** @var Nette\Http\SessionSection */
+    private $sessionSection;
+
+    public function __construct(Nette\Http\Session $session)
+    {
+        $this->session = $session;
+
+        // a získáme přístup do sekce 'mySection':
+        $this->sessionSection = $session->getSection('mySection');
+    }
+}
+
 
 
