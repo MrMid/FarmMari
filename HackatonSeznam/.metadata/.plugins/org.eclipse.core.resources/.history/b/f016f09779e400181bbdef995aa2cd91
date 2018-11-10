@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Presenters;
+
+
+final class HomepagePresenter extends BasePresenter
+{
+	private requestd;
+	
+	public function renderDefault()
+	{
+		$this->template->anyVariable = 'any value';
+	}
+	public function prirad(){
+		?>
+		<script type="text/javascript">
+			var hledej = document.getElementsByClassName("fa fa-search");
+			var request = document.getElementsByClassName("form-control");
+			var requestText;
+	
+			$( hledej ).click(function() {
+				requestText = $( request ).val();
+			    $("h2").text($( request ).val());
+			});
+		</script>
+		<?php 
+	}
+}

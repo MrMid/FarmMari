@@ -1,0 +1,851 @@
+HTML
+Programming languages
+IDE
+.NET
+NBSP
+ASCII
+AOP
+API
+Applet
+Argument
+Arithmetic operator
+Array
+Array of pointers
+ASCII
+ASP
+ASPI
+Assembler
+Assembly
+Associative operation
+Data type
+Backend
+Back-face culling
+Background thread
+Backpropagation neural network
+Base address
+Batch file
+Batch job
+BCPL
+Bean
+BeanShell
+Binary Search
+Bind
+Bit shift
+Bitwise operators
+Block
+Block-level element
+BOM
+Bool
+Boolean
+Boolean data type
+Bracket
+Branch
+Brooks
+Bug
+Bug tracking
+Bugfairy
+Bytecode
+C
+C sharp
+C++
+C#
+CamelCase
+Captured variable
+CC
+Char
+Character code
+Character encoding
+Character set
+Circuit satisfiability problem
+Class
+Classpath
+Clojure
+CLOS
+Closure
+CLR
+Code
+Code refactoring
+Codepage
+CoffeeScript
+Common Gateway Interface
+Compilation
+Compile
+Compiler
+Concatenation
+Concurrency
+Conditional expression
+Conditional statement
+Constant
+Constructor
+Constructor chaining
+CPAN
+CPL
+Crapplet
+CS
+CSAT
+CSS
+CSS compressor
+CSS editor
+Curly bracket
+Curry
+CVS
+Debug
+Debugger
+Debugging
+Declaration
+Declarative programming
+Declare
+Decompiler
+Decrement
+Deductive database
+Delimiter
+Dense matrix
+Dereference operator
+Dependent variable
+DHTML
+Direct address
+Discrete optimization
+Dissembler
+Div
+Django
+DML
+Do
+DOM
+Dragon book
+Dribbleware
+Dump
+Dword
+Eclipse
+ECMAScript
+Element
+Ellipsis
+Else
+Else if
+Elsif
+Embedded Java
+Encapsulation
+Encode
+Endian
+Endless loop
+EOF
+Epoch
+Eq
+Equal
+Error
+Errorlevel
+Esac
+Escape
+Escape character
+Escape sequence
+Eval
+Event
+Event handler
+Event listener
+Event-driven programming
+Exec
+Exception
+Exception handling
+Exists
+Expression
+First-class object
+Flag
+Flat file
+Floating-point
+For
+Foreach
+FORTRAN
+Framework
+Function
+GTK
+Hash
+Haskell
+Heap
+Hex editor
+HDML
+HTML
+IDE
+If else
+If statement
+Immutable object
+Implicit parallelism
+Increment
+Indirection operator
+Inherent error
+Inheritance
+Inline
+Input/output statement
+Instance
+Instantiation
+Instructions
+Int
+Integer
+IntelliJ IDEA
+Interpreted
+Interpreter
+Invalid
+IOCCC
+IPC
+ISAPI
+Iteration
+Java
+Java champion
+Java EE
+Java ME
+Java reserved words
+JavaBean
+Javac
+JavaFX
+JavaScript
+JavaScriptCore
+Javax
+JBuilder
+JCL
+JDBC
+JDK
+JIL
+JIT
+JHTML
+JNI
+JRE
+JScript
+JSON
+JSP
+JSR
+JVM
+Linker
+LISP
+Live script
+Literal
+Logical operation
+Lookup table
+Loony bin
+Loop
+Loophole
+Library
+LT
+Lua
+LUT
+Map
+Matlab
+Meta-character
+Metaclass
+Metalanguage
+Method
+Method overloading
+Middleware
+Mod
+Module
+Modulo
+MSDN
+MSVC
+Multi-pass compiler
+NaN
+.NET
+Native compiler
+Nested function
+Nested loop join
+Newline
+Nil pointer
+Nim
+Node.js
+Nodelist
+Noncontiguous data structure
+Non-Disclosure Agreement
+Nonexecutable statement
+NO-OPeration instructions
+Null
+Null character
+Null pointer
+Object code
+Object file
+Object module
+Octave
+ODBC
+OOP
+One-pass compiler
+Opcode
+OpenGL polygon
+Operand
+Operator
+Operator associatively
+Operator precedence
+OR operator
+Overflow error
+Overload
+P-code
+Package
+Parenthesis
+Parse
+Pascal
+PDL
+Perl
+Persistent memory
+PersonalJava
+PHP
+Phrase tag
+Pick
+Pickling
+PicoJava
+Pipe
+Pixel shader
+POD
+Pointer
+Polymorphism
+Pop
+Positional parameter
+Private
+Procedural language
+Procedure
+Process
+Program generator
+Program listing
+Programmable
+Programmer
+Programming
+Programming in logic
+Programming language
+Programming tools
+Pseudo-random
+Public
+PureBasic
+Push
+Python
+Python pickling
+Pythonic
+Qi
+QT
+RAD
+Random
+Random seed
+RCS
+RDF
+React
+React Native
+Real number
+Recursion
+Recursive
+Regex
+Regular expression
+Repeat counter
+REPL
+Reserved character
+Reserved word
+Return address
+Return statement
+Reverse engineering
+Revision control
+Routine
+Ruby
+Run time
+S-expression
+Safe font
+Scala
+Scanf
+SDK
+Section
+Segfault
+Separator
+Sequence
+Server-side
+scripting
+Servlet
+SGML
+Shebang
+Shell scripts
+Shift
+Signedness
+SMIL
+Snippet
+SOAP
+Software library
+Software life cycle
+Source
+Source code
+Source computer
+Source data
+SourceForge
+SQL
+Stack
+Stack pointer
+Standard attribute
+Statement
+Stdin
+Stubroutine
+Stylesheet
+Subprogram
+Subroutine
+Subscript
+Substring
+Subversion
+Superclass
+Switch statement
+Syntax error
+System development
+Tail recursion
+Tcl
+Tcl/Tk
+Ternary operator
+Thread
+Tk
+Token
+Transcompiler
+True
+True BASIC
+Turbo Pascal
+Unary operator
+Undefined
+Underflow
+Unescape
+Unshift
+Value
+Var
+Variable
+VB
+Vector
+VHDL
+VIM
+Visual Basic
+Visual Studio
+Void
+WebGL
+While
+Whole number
+WML
+Workspace
+XML
+XNA
+XOR operator
+XSL
+XSLT
+Y combinator
+YAML
+.NET
+.NET Framework
+ABAP
+abort
+abstract data type
+abstraction
+ActiveX
+Ada
+AFC
+aggregate function
+AND operator
+Android fragmentation
+Ansible
+APL
+APM
+AppleScript
+applet
+application domain
+argument
+arithmetic expression
+arity
+ASD Agent
+ASP.NET
+AspectC++
+AspectJ
+aspects
+Aspecwerkz
+assembler
+assembly language
+assign
+ATL
+atomic operation
+attribute
+autoresponder
+awk
+Azure PowerShell
+backport
+backward chaining
+base address
+base class
+BASIC
+batch processing
+BeanShell
+big-endian
+bigwig
+bind
+binder
+bit flip
+bitwise operator
+BizTalk Server
+Boolean expression
+Boolean logic
+Boolean operator
+boot
+boot loader
+boot sequence
+breakpoint
+build
+bytecode
+C
+C#
+C++
+call
+CCNA
+CCXML
+CFML
+character treatment
+choke packet
+cHTML
+CICS
+CIM
+class
+class library
+Client Application Services
+close
+CLR
+CLSID
+cmdlet
+code
+coff
+compile
+compiler
+component
+Component Object Model
+concatenate
+concatenation
+ConciseXML
+conditional
+constant
+ContentPlaceHolder control
+contiguous
+control
+CORBA
+core logic
+crapplet
+cron
+cross-compiler
+custom attribute
+cXML
+daemon
+Dart programming language
+data type
+Datalog
+DCL
+DCOM
+debug
+debugger
+declare
+decrement
+deep link
+default
+delimiter
+Delphi
+deploy
+deprecated
+derived class
+DLL
+Document Type Declaration
+document type definition
+DOI
+DOM
+Document Object Model
+dual boot
+dump
+dynamic data structure
+dynamic function loading
+dynamic shared object
+dynamic variable
+dynaset
+ebXML
+EFI
+encapsulation
+engine
+ESB
+Enterprise Service Bus
+event
+event handler
+exception
+exclusive OR
+execute
+execution environment
+EE
+Executive Support System
+expression
+Expression Builders
+fail soft
+FAT
+file allocation table
+fatal error
+fatal exception error
+FCL
+feed
+feed aggregator
+feed validator
+filter
+flag
+FLWOR
+fork
+forward chaining
+function
+function block
+function block adapter
+functional specification
+garbage in
+garbage out
+Global Assembly Cache
+GML
+gold version
+GRASP
+grep
+GTK+
+GW-BASIC
+Hal/S
+hashing
+heap sort
+HLF
+HLLAPI - High Level Language Application Program Interface
+HotJava
+HTML
+HyperText Markup Language
+identifier
+IDL - Interface Definition Language
+iHTML
+inclusive OR operator
+increment
+inheritance
+initialize
+instruction
+interface
+interpreter
+interprocess communication
+IPC
+invocation
+invoke
+ISAPI
+iteration
+jabber
+Java
+Java applet
+Java IDL
+JavaBeans
+JavaScript
+JavaSoft
+JavaSpaces
+JDK
+JIT
+jQuery
+JScript
+JSON
+JVM - Java Virtual Machine
+JVoiceXML
+JXTA
+keyword
+KLOC
+kludge
+KQML
+Lambda Expression
+Last Known Good Configuration
+libpurple
+library
+LILO
+Linux Loader
+line
+link
+link edit
+linked list
+linker
+LINQ
+LISP
+listing
+literal
+livelock
+LLF
+localization
+logic gate
+loop
+macro
+map
+mash-up
+mask
+Master Page
+MathML
+MAX function
+Media server control
+memory leak
+message digest
+message passing
+Message Passing Interface
+metadata
+method
+MFC
+mod
+module
+MPICH2
+MTS
+Multiple Document Interface
+multitasking
+MUMPS
+mutex - mutual exclusion object
+namespace
+native code
+nesting
+NOR operator
+NOT operator
+NS Basic
+object
+object code
+object oriented
+obliq
+OFX
+operand
+operator
+optimize
+OR operator
+ORB
+OTcl
+overloading
+parameter
+parse
+parser
+partial classes
+partial methods
+Pascal
+patch
+pattern
+Perl
+PHP
+PL/B
+PL/SQL
+pointcuts
+pointer
+POJO
+polymorphism
+PowerBuilder
+Pre-compilation Tool
+precedence
+primitive
+program
+programmer
+property
+Python
+QBASIC
+query language
+RDI - Remote Debug Interface
+recursion
+refactoring
+reflection
+REL
+relational operator
+remoting
+repository
+reserved word
+Rexx
+RLaB
+RMI
+routine
+RPC - remote procedure call
+Ruby
+Ruby on Rails
+rule-based system
+runtime
+runtime error
+SAML
+SASL
+Sather
+SAX
+scalable
+SCAM
+script
+scripting language
+security manager
+selection
+semantics
+sequence
+serialization
+SISD
+slipstream
+SLOC
+Smalltalk
+snarf
+SOAP
+socket
+source code
+source code control system
+source code manager
+spanning tree protocol
+SQL
+structured query language
+SSE
+SSI - server-side include
+stateless
+statement
+static data structure
+static testing
+static variable
+stop error
+storage testing
+stored procedure
+Struts Framework
+stub
+subscript
+Subversion
+syndication
+syntax
+system call
+systems analyst
+systems integrator
+T-SQL
+Transaction-SQL
+tag
+TAPI - Telephony Application Programming Interface
+Tcl
+TCQ
+ternary operator
+time-out
+trace cache
+trigger
+tweak
+two-tier
+type
+type-safe
+UAT
+UML
+underflow
+user defined function
+UUID
+validation
+VAPI
+variable
+VBScript
+VBX
+viewport
+virtual machine
+Visual Basic
+Visual Basic Editor
+Visual Basic for Applications
+Visual C++
+VSIP
+VTAM
+VXML
+Water
+WDDX
+Web services
+WebDAV
+White Box Testing
+WMI
+word
+WSDL
+XBRL
+XHTML
+XLink
+XMCL
+XMI
+XML
+XML data island
+XML Schema Definition
+XSD
+XMLHTTP
+XMLHttpRequest
+XMPP
+XOR operator
+XOTcl
+XrML
+xampp
+XSL
+XSLT
+XSP
+XUL
+Z-buffering
+Neural Network

@@ -7,6 +7,7 @@ use Nette\Application\UI;
 
 final class HomepagePresenter extends BasePresenter
 {
+	
 	public function renderDefault()
 	{
 		$this->template->anyVariable = 'any value';
@@ -24,7 +25,7 @@ final class HomepagePresenter extends BasePresenter
 
 	public function searchSucceeded(UI\Form $form, $values)
 	{
-		// $this->flashmessage($this->queryStackOverflow($values->query, ''));
+		$this->flashmessage($this->queryStackOverflow($values->query, ''));
 	}
 
 	private function queryStackOverflow($query, $matchedTag)
@@ -37,14 +38,14 @@ final class HomepagePresenter extends BasePresenter
 
 	private function queryQuestions($query, $tag)
 	{
-		$q = file_get_contents('https://api.stackexchange.com/2.2/search?tagged=' . urlencode($tag) . '&intitle=' . urlencode($query) . '&site=stackoverflow&sort=votes');
+		$q = file_get_contents('https://api.stackexchange.com/2.2/search?tagged=' . urlencode($tag) . '&intitle=' . urlencode($query) . '&site=stackoverflow&sort=votes&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
 		$q = json_decode(gzinflate(substr($q, 10)));
 		return $q;
 	}
 
 	private function getAnswer($questionID)
 	{
-		$answers = file_get_contents('https://api.stackexchange.com/2.2/questions/' . $questionID . '/answers?order=desc&sort=votes&site=stackoverflow');
+		$answers = file_get_contents('https://api.stackexchange.com/2.2/questions/' . $questionID . '/answers?order=desc&sort=votes&site=stackoverflow&access_token=RFADpi(YJYsYGVWUu5HZFA))&key=lx3)M1EQI0UayNcV29hE8Q((');
 		$answers = json_decode(gzinflate(substr($answers, 10)));
 		$answer = NULL;
 		foreach ($answers->items as $a) {
