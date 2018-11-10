@@ -15,7 +15,7 @@
 }
 
 #pes-bubble {
-    border: solid gray 1px;
+    border: solid rgba(0, 0, 0, 0.08) 1px;
     border-radius: 4px; 
     float: left;
     padding: 25px;
@@ -77,32 +77,32 @@
     color: #393318;
 }
 
-#pes-bubble pre {
+#pes-bubble div pre {
     margin-bottom: 1em;
     padding: 5px;
     width: auto;
     max-height: 600px;
     overflow: auto;
-    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+    font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,sans-serif;
     font-size: 13px;
     background-color: #eff0f1;
 }
 
-#pes-bubble.kwd {
-
+.kwd {
+    color: #101094;
 }
-#pes-bubble. {
-    
+.pln {
+    color: #303336;
 }
-#pes-bubble. {
-    
+.pun {
+    color: #303336;
 }
-#pes-bubble. {
-    
+.str {
+    color: #7D2727;
 }
-#pes-bubble. {
-    
+.typ {
+    color: #2B91AF;
 }
-#pes-bubble. {
-    
+.lit {
+    color: #7D2727;
 }
