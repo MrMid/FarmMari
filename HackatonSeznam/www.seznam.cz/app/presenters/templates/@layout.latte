@@ -11,7 +11,13 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="stylesheet" href="{$basePath}/css/style.css"> -->
-	{block head}{/block}
+	{block head}
+		<script type="text/css">
+			$( "#result" ).load( "https://stackoverflow.com/questions/53240289/java-detect-duplicate-triplicate-n-character-in-a-string", function() {
+	  			alert( "Load was performed." );
+			});
+		</script>
+	{/block}
 	
 	
 		<!-- Custom Fonts -->
